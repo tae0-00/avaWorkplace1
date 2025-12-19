@@ -80,9 +80,58 @@ public class OperatorPractice {
 	}
 	
 	
+	public void practice6(){
+		System.out.print("정수 1 :" );
+		int num1 =sc.nextInt();
+
+		System.out.print("정수 2 :" );
+		int num2 =sc.nextInt();
+
+
+		System.out.print("입력 :" );
+		int num3 =sc.nextInt();
+
+		System.out.println( num3<=num1 || num3 > num2 ? true : false );
+	}
+
+		public void practice7(){
+		 
+		System.out.print("입력1  :" );
+		int num1 =sc.nextInt();
+
+		System.out.print("입력 2 :" );
+		int num2 =sc.nextInt();
+
+		System.out.print("입력 3 :" );
+		int num3 =sc.nextInt();
+		
+		
+		System.out.println((num1 == num2)&& (num2== num3) ? true : false) ;
+		}
+		public void practice8(){
+
+		System.out.print("A사원의 연봉  :" );
+		int money1 =sc.nextInt();
+
+		System.out.print("B사원의 연봉  :" );
+		int money2 =sc.nextInt();
+
+		System.out.print("C사원의 연봉  :" );
+		int money3 =sc.nextInt();
+
+		double bonusA = money1 * 0.4;
+		double bonusB = money2 * 0;
+		double bonusC = money3 * 0.15;
+
+		double sumA = money1 + bonusA ;
+		double sumB = money2 + bonusB;
+		double sumC = money3 + bonusC;
+		System.out.println("A사원 연봉/연봉+a :" + (sumA >=3000 ? "3000 이상\n" : "3000미만\n")+ 
+					 "B사원 연봉/연봉 +a :" + (sumB >=3000 ? "3000원 이상\n" : "3000미만\n")+
+					 "C사원 연봉/연봉 +a  :" +(sumC >=3000 ? "3000원 이상\n" : "3000미만\n"));
+		}}
 	
 	
 	
 	
-	
-}
+
