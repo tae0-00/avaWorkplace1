@@ -13,8 +13,8 @@ public class OperatorPractice {
 		System.out.print("사탕 개수 : ");
 		int candys = sc.nextInt();
 		
-		System.out.println("1인당 사탕 개수 "+ (person / candys));
-		System.out.println("남는 사탕 개수 "+ (person % candys));
+		System.out.println("1인당 사탕 개수 "+ (candys / person));
+		System.out.println("남는 사탕 개수 "+ (candys % person));
 	}
 
 	public void practice2() {

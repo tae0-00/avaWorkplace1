@@ -66,7 +66,7 @@ public class B_InDecrease {
 		System.out.println(a++); // 10(11)
 		System.out.println((++a) + (b++)); // a:12 , b: 20(21) = 32
 		System.out.println((a++)+(--b)+(--c)); // a : 12(13) b: 20 c: 29 = 61
-		System.out.printf("a: %d , b: %d, c: %d",a,b,c	);
+		System.out.printf("a: " +  a  + " b: " +  b + " c : " + c 	);
 	}
 	
 	

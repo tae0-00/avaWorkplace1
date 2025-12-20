@@ -5,8 +5,11 @@ public class Run {
 		B_InDecrease bi = new B_InDecrease();
 		//bi.method2();
 		
-		D_Logical di = new D_Logical();
-		di.method4();
+		B_InDecrease bi1 = new B_InDecrease();
+		bi1.method4();
+		
+		//D_Logical di = new D_Logical();
+		//di.method4();
 	}
 	
 }

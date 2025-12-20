@@ -7,7 +7,7 @@ public class VariablePractice1 {
 	
 	public void practice1() {		
 		System.out.print("이름 : ");
-		String name = sc.next(); // ㅋㅋㅋㅋ
+		String name = sc.next(); 
 		
 		System.out.print("성별 : ");
 		char gender = sc.next().charAt(0);

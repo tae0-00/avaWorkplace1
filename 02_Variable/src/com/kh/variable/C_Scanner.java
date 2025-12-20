@@ -9,7 +9,7 @@ public class C_Scanner {
 		Scanner sc = new Scanner(System.in);
 		
 		//사용자의 인적사항정보 입력받기
-		System.out.print("당신의 이름을 입력해 주세요..");
+		System.out.print("당신의 이름을 입력해 주세요. : ");
 		// 사용자가 입력한 값을 "문자열"로 받아오는 메서드
 		// 1. nextLine() : 사용자가 입력한 값을 "엔터"를 기준으로
 		// 모두 가져오는 메서드. 값을 가져온 후 개행문자(엔터)는 비워준다.
