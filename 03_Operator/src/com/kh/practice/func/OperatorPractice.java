@@ -110,25 +110,32 @@ public class OperatorPractice {
 		}
 		public void practice8(){
 
-		System.out.print("A»ç¿øÀÇ ¿¬ºÀ  :" );
-		int money1 =sc.nextInt();
-
-		System.out.print("B»ç¿øÀÇ ¿¬ºÀ  :" );
-		int money2 =sc.nextInt();
-
-		System.out.print("C»ç¿øÀÇ ¿¬ºÀ  :" );
-		int money3 =sc.nextInt();
-
-		double bonusA = money1 * 0.4;
-		double bonusB = money2 * 0;
-		double bonusC = money3 * 0.15;
-
-		double sumA = money1 + bonusA ;
-		double sumB = money2 + bonusB;
-		double sumC = money3 + bonusC;
-		System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ+a :" + (sumA >=3000 ? "3000 ÀÌ»ó\n" : "3000¹Ì¸¸\n")+ 
-					 "B»ç¿ø ¿¬ºÀ/¿¬ºÀ +a :" + (sumB >=3000 ? "3000¿ø ÀÌ»ó\n" : "3000¹Ì¸¸\n")+
-					 "C»ç¿ø ¿¬ºÀ/¿¬ºÀ +a  :" +(sumC >=3000 ? "3000¿ø ÀÌ»ó\n" : "3000¹Ì¸¸\n"));
+			System.out.print(" A»ç¿ø ¿¬ºÀ : ");
+			int money1 =  sc.nextInt();
+			
+			System.out.print(" B»ç¿ø ¿¬ºÀ : ");
+			int money2 = sc.nextInt();
+			
+			System.out.print(" C»ç¿ø ¿¬ºÀ : ");
+			int money3 = sc.nextInt();
+			
+			double bonusA= money1 * 0.4;
+			double bonusB= money2 * 0;
+			double bonusC= money3 * 0.15;
+			
+			double sumA = money1 + bonusA ;
+			double sumB = money2 + bonusB ;
+			double sumC = money3 + bonusC ;
+			
+			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money1  + "/"  + sumA 
+					+"\n"+ (sumA>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+			
+			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money2  + "/"  + sumB
+					+"\n"+(sumB>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));		
+			
+			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money3  + "/"  + sumC
+					+"\n"+ (sumC >= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+		
 		}
 		public void practice9() {
 			
@@ -163,13 +170,13 @@ public class OperatorPractice {
 		public void practice11() {
 			
 			System.out.print(" A»ç¿ø ¿¬ºÀ : ");
-			double money1 = sc.nextDouble();
+			int money1 =  sc.nextInt();
 			
 			System.out.print(" B»ç¿ø ¿¬ºÀ : ");
-			double money2 = sc.nextDouble();
+			int money2 = sc.nextInt();
 			
 			System.out.print(" C»ç¿ø ¿¬ºÀ : ");
-			double money3 = sc.nextDouble();
+			int money3 = sc.nextInt();
 			
 			double bonusA= money1 * 0.4;
 			double bonusB= money2 * 0;
