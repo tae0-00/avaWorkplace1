@@ -23,7 +23,10 @@ public class Run {
 		//sc6.practice6();
 		
 		ControlPractice sc7 = new ControlPractice();
-		sc7.practice7();
+		//sc7.practice7();
+		
+		ControlPractice sc8 = new ControlPractice();
+		sc8.practice8();
 	}
 
 }

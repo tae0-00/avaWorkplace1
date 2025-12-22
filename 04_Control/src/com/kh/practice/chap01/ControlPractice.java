@@ -206,8 +206,17 @@ public class ControlPractice {
 		System.out.print("피연산자2 : ");
 		int num2 = sc.nextInt();
 		
+		System.out.print("연산자를(+,-,*,/,%) 입력 : ");
+		String oper = sc.next();
+		
+		switch(oper) {
+		case "+" : case "-" :case "*" : case "/": case "%" : 
+			System.out.println(num1 + oper +num2 +" = "+ (double)((float)num1 / num2 ) );
+		}
 		
 		
+	}
+	public void practice9() {
 		
 	}
 }
