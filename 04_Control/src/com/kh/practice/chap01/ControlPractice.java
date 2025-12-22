@@ -198,4 +198,16 @@ public class ControlPractice {
 		}
 		
 	}
+	public void practice8() {
+		
+		System.out.print("피연산자1 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("피연산자2 : ");
+		int num2 = sc.nextInt();
+		
+		
+		
+		
+	}
 }
