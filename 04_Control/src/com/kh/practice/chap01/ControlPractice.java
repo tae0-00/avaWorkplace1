@@ -211,12 +211,49 @@ public class ControlPractice {
 		
 		switch(oper) {
 		case "+" : case "-" :case "*" : case "/": case "%" : 
-			System.out.println(num1 + oper +num2 +" = "+ (double)((float)num1 / num2 ) );
+			System.out.println(num1 + oper +num2 +" = "+ (double)((float)
+					num1 / num2 ) );
 		}
 		
 		
 	}
 	public void practice9() {
+		System.out.print("중간 고사 점수 :");
+		int middle = sc.nextInt();
+		
+		System.out.print("기말 고사 점수 :");
+		int last = sc.nextInt();
+		
+		System.out.print("과제 고사 점수 :");
+		int hw = sc.nextInt();
+		
+		System.out.print("출석 회수 :");
+		int come = sc.nextInt();
+		
+		double mp = middle * 0.2;
+		double lp = last * 0.3;
+		double hwp = hw * 0.3;
+		double cp = come ;
+		
+		if(cp<=come*0.3) {
+			System.out.println("Fail");
+		}
+		else if {
+			
+		}
+		else {
+			System.out.println("Pass");
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 }
