@@ -1,4 +1,4 @@
-package com.kh.practice.chap02.loop;
+package com.kh.practice.chap02.loop.copy;
 
 public class Run {
 
@@ -26,12 +26,7 @@ public class Run {
 		//lp7.practice7();
 		
 		LoopPractice lp8= new LoopPractice();
-		//lp8.practice8();
-		//lp8.practice9();
-		//lp8.practice10();
-		//lp8.practice11();
-		lp8.practice12();
-		
+		lp8.practice8();
 		
 		
 	}
