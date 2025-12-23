@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ControlPractice {
 	Scanner sc = new Scanner(System.in);
 
-	public void pracactice1() {
+	public void practice1() {
 
 		System.out.print(" 메뉴 번호를 입력하세요. : ");
 		int num = sc.nextInt();
@@ -38,7 +38,7 @@ public class ControlPractice {
 		}
 	}
 
-	public void pracactice2() {
+	public void practice2() {
 
 		System.out.print(" 숫자 한개를 입력하세요. :");
 		int num = sc.nextInt();
@@ -53,7 +53,7 @@ public class ControlPractice {
 		}
 	}
 
-	public void pracactice3() {
+	public void practice3() {
 		System.out.print("국어점수 : ");
 		int kor = sc.nextInt();
 
@@ -142,7 +142,7 @@ public class ControlPractice {
 		
 			
 	}
-	
+
 	/*public void practice5_1() {
 		
 		String id = tae0;
@@ -151,26 +151,27 @@ public class ControlPractice {
 			
 		}해보기 10번 문제 메서드 (); 로 하면 열림??
 	}*/ 
-	
+
 	public void practice6() {
 		System.out.print("권한을 확인하고자 하는 회원 등급: ");
 		String str =sc.next();
 		
 		switch(str) {
 		case "관리자" : 
-			System.out.println("회원관리, 게시글 관리 게시글 작성, 댓글작성 게시들 조회");
-			break;
+			System.out.println("회원관리, 게시글 관리 , 게시글 작성, 댓글작성, 게시글 조회");//게시물관리 회원관리 만
+			break;//빼기
 			
 		case "회원" : 
-			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");	
-			break;
+			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");//게시글 작성, 댓글작성	
+			break;//빼기
 		case "비회원" : 
-			System.out.println(" 게시글 조회");	
+			System.out.println(" 게시글 조회");	 //break 없이 사용하면 중복되는 것들은 안적어됨
 			break;	
 			
 		}
+		
 	}
-	
+
 	public void practice7() {
 		System.out.print("키를 입력해주세요 : ");
 		double height = sc.nextDouble();
@@ -178,9 +179,11 @@ public class ControlPractice {
 		System.out.print("몸무게를 입력해주세요 : ");
 		double weight = sc.nextDouble();
 		
+		
 		double bmi = weight/(height*height);
 		
 		System.out.println("BMI 지수 : "+ bmi);
+		
 		if(bmi<18.5) {
 			System.out.println("저체중 ");
 		}
@@ -194,66 +197,131 @@ public class ControlPractice {
 				System.out.println("비만체중");
 		}
 		else  {
-			System.out.println("정상체중");
-		}
+			System.out.println("고도비만");
+			}
 		
-	}
+			}
 	public void practice8() {
-		
-		System.out.print("피연산자1 : ");
+		System.out.print("피연산자 1: ");
 		int num1 = sc.nextInt();
 		
-		System.out.print("피연산자2 : ");
+		System.out.print("피연산자 2: ");
 		int num2 = sc.nextInt();
 		
-		System.out.print("연산자를(+,-,*,/,%) 입력 : ");
+		System.out.print("연산자를 입력(+,-,*,/,%) : ");
 		String oper = sc.next();
 		
-		switch(oper) {
-		case "+" : case "-" :case "*" : case "/": case "%" : 
-			System.out.println(num1 + oper +num2 +" = "+ (double)((float)
-					num1 / num2 ) );
-		}
 		
+		//double result = (float)num1/num2 ;
 		
-	}
-	public void practice9() {
-		System.out.print("중간 고사 점수 :");
-		int middle = sc.nextInt();
-		
-		System.out.print("기말 고사 점수 :");
-		int last = sc.nextInt();
-		
-		System.out.print("과제 고사 점수 :");
-		int hw = sc.nextInt();
-		
-		System.out.print("출석 회수 :");
-		int come = sc.nextInt();
-		
-		double mp = middle * 0.2;
-		double lp = last * 0.3;
-		double hwp = hw * 0.3;
-		double cp = come ;
-		
-		if(cp<=come*0.3) {
-			System.out.println("Fail");
-		}
-		else if {
+		if ((num1 > 0 && num2 > 0)   ) {
+			switch (oper){
+			case "+" :
+			System.out.println(num1 + oper + num2 +"="+ (num1+ num2 ));
+			     break;
+			case "-" :
+			System.out.println(num1 + oper + num2 +"="+ (num1- num2 ));
+			     break;		
+			case "*" : 
+				System.out.println(num1 + oper + num2 +"="+ (num1* num2 ));
+			     break;			
+			case "/" : 
+				System.out.println(num1 + oper + num2 +"="+ ((double)num1/ num2 ));
+			     break;				
+			case "%" :
+				System.out.println(num1 + oper + num2 +"="+ (num1& num2 ));
+			     break;					
+			}
 			
 		}
 		else {
-			System.out.println("Pass");
+			System.out.println("잘못 입력");
 			
 		}
 		
+	}
+	public void practice9() {
+		
+		System.out.print("중간고사 점수 :");
+		int middle =sc.nextInt();
+		
+		System.out.print("기말고사 점수 :");
+		int last =sc.nextInt();
+		
+		System.out.print("과제 점수 :");
+		int hw =sc.nextInt();
+		
+		System.out.print("출석 회수 점수 :");
+		int days =sc.nextInt();
+		
+		double m1= middle* 0.2;
+		double l1 = last* 0.3;
+		double h1 = hw* 0.3;
+		double d1 = days;
 		
 		
+		double sum = m1 + l1 + h1 + d1;
 		
+		if( d1<=14){
+			System.out.println("Fail[출석회수 부족 ( " + days+ "/20)]");
+			return;
+		}	
 		
+		if (sum<70) {
+			System.out.println("Fail");
+		}	
+		else {
+			System.out.println("Pass");
 		
+			}
+		 System.out.println("중간고사 점수(20) : "+ m1);
+			System.out.println("기말고사 점수(30) : "+ l1);
+			System.out.println("과제 점수(30) : "+ h1);
+			System.out.println("출석 점수(20) : "+ d1);
+			System.out.println("총점 : "+ sum);
+		}
+	public void practice10() {
+		System.out.print("선택 : ");
+		int num1 =sc.nextInt();
 		
+		switch(num1) {
+		case 1 :
+			System.out.println("1. 메뉴 출력 : "); practice1();
+			break;
+		case 2 :
+			System.out.println("2. 짝수/홀수: " ); practice2();
+			break;
+		case 3 :
+			System.out.println("3. 합격/불합격 : "); practice3();
+			break;	
+		case 4 :
+			System.out.println("4. 계절 : "); practice4();
+			break;
+		case 5 :
+			System.out.println("5. 로그인 : ");practice5();
+			break;
+		case 6 :
+			System.out.println("6. 권한 확인 : ");practice6();
+			break;
+		case 7 :
+			System.out.println("BMI : ");practice7();
+			break;
+		case 8 :
+			System.out.println("계산기 : ");practice8();
+			break;
+		case 9 :
+			System.out.println("P/F : ");practice9();
+			break;
+		default :
+		}
+	}
+
+	public void practice11(){
 		
+		System.out.print("비밀번호 입력 :(1000~9999) ");
+		int pwd = sc.nextInt();
 		
 		
 	}
 }
+	

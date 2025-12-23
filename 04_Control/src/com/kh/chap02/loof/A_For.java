@@ -136,10 +136,51 @@ public class A_For {
 		 * 
 		 * ...
 		 * 2x9= 18
+		 * 
+		 * 3X1=3
+		 * ..
+		 * 
+		 * 9X9=81
 		 */
 		
-		for (int i=1; i<=9; i++) {
+		for (int  i=1; i<=9; i++) {
 			System.out.println("2 X "+ i + " = "+ (2*i));
 		}
+		//구구단2단부터 9단까지 출력하기
+		for (int dan =2; dan<=9; dan++) {
+			for (int  i=1; i<=9; i++) {
+				System.out.println(dan + "x"+i);
+			}
+		}
 	}
+	public void method8() {
+		//*****\n
+		//*****\n
+		//*****\n
+		//*****\n
+		
+		//행은 외부 열은 내부
+		for(int j= 0; j< 4; j++ ) {
+			for (int i  = 1; i < 5; i++ ) {
+				System.out.print("*");
+			}
+			System.out.println("\n");
+	}
+	}
+	
+	public void method9() {
+		//1***\n
+		//*2**\n
+		//**3*\n
+		//***4\n
+		
+		for(int i=0; i<4; i++) {
+			for(int j=0; j<4; j++ ) {
+			if (j==1)System.out.print(i+1);
+			else System.out.print("*");
+			}
+			System.out.println("\n");
+			}
+		}
+	
 }
