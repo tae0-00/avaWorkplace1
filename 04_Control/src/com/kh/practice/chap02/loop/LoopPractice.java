@@ -260,8 +260,12 @@ public class LoopPractice {
 			
 		}
 
-		// if (gong2% 2==0) {
-
+		if (gong2% 2==0) {
+			
+		}
+		if (gong2% 2==0) {
+			
+		}
 	}
 
 	public void practice111() {
