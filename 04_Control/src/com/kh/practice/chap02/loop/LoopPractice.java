@@ -132,10 +132,10 @@ public class LoopPractice {
 		while (true) {
 			System.out.println("연산자 : ");
 			String oper = sc.next();
-
+			char ch =oper.charAt(0);
 			if (oper.equals("exit")) {
 				System.out.println("프로그램을 종료합니다.");
-				break;
+				break;// 와일 참일때 브레키트 없으면 아래코드 실행안되면서 오류남
 			} else {
 
 				System.out.println("정수1 : ");
@@ -143,7 +143,7 @@ public class LoopPractice {
 
 				System.out.println("정수2 : ");
 				int num2 = sc.nextInt();
-
+				
 				// if (num2 < 0) {
 				// System.out.println("0으로 안돼 ㄷㅏ시 입력");
 				// continue;
@@ -187,7 +187,7 @@ public class LoopPractice {
 				System.out.print("*");
 			}
 
-			System.out.println("");
+			System.out.println();
 		}
 
 	}
@@ -200,7 +200,7 @@ public class LoopPractice {
 			for (int j = 0; j <= i; j++) {
 				System.out.print("*");
 			}
-			System.out.println("");
+			System.out.println();
 		}
 	}
 
@@ -215,7 +215,12 @@ public class LoopPractice {
 			System.out.println("잘못입력");
 			return;
 		}
-
+		/*소수판별식
+			/*for (int i = 1; i <= num; i++) {
+		
+		if (num%i == 0) {
+			System.out.print("소수 아닙니다.");
+			*/
 		for (int i = 1; i <= num; i++) {
 			int re = num % i;
 			if (re == 0) {
@@ -232,9 +237,10 @@ public class LoopPractice {
 
 	public void practice11() {
 		System.out.print("숫자 :");
+		//아닌 코드를 먼저 이프로 만들고 브레으크?/왜ㅑ 리턴이지?
 		int num1 = sc.nextInt();
 		if (num1 > 2) {
-			for (int i = 1; i <= num1; i++) {
+			for (int i = 2; i <= num1; i++) {
 				System.out.print(i);
 			}
 			System.out.println("2부터" + num1 + "까지의 소수의 개수는" + "개입니다.");
@@ -264,7 +270,7 @@ public class LoopPractice {
 			
 		}
 		if (gong2% 2==0) {
-			
+			//2와 3배수랑 공배수로
 		}
 	}
 
