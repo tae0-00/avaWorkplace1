@@ -8,22 +8,22 @@ public class VariablePractice2 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Ã¹ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ì²« ë²ˆì§¸ ì •ìˆ˜ : ");
 		int num1 = sc.nextInt();
 		
-		System.out.print("µÎ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ë‘ ë²ˆì§¸ ì •ìˆ˜ : ");
 		int num2 = sc.nextInt();
 		
 		
-		/*System.out.println("´õÇÏ±â °á°ú :"+ num1 + num2);
-		System.out.println("»©±â °á°ú :"+ (num1 - num2));
-		System.out.println("°öÇÏ±â °á°ú :"+ (num1 * num2));
-		System.out.println("³ª´« °ª °á°ú :"+ (num1 / num2));
+		/*System.out.println("ë”í•˜ê¸° ê²°ê³¼ :"+ num1 + num2);
+		System.out.println("ë¹¼ê¸° ê²°ê³¼ :"+ (num1 - num2));
+		System.out.println("ê³±í•˜ê¸° ê²°ê³¼ :"+ (num1 * num2));
+		System.out.println("ë‚˜ëˆˆ ê°’ ê²°ê³¼ :"+ (num1 / num2));
 		*/
-		System.out.print("´õÇÏ±ë : " + (num1 + num2));
-		System.out.print("»©±â : " + (num1 - num2));
-		System.out.print("°öÇÏ±â : " + num1 * num2);
-		System.out.print("³ª´©±â : " + num1 / num2);
+		System.out.print("ë”í•˜ê¹… : " + (num1 + num2));
+		System.out.print("ë¹¼ê¸° : " + (num1 - num2));
+		System.out.print("ê³±í•˜ê¸° : " + num1 * num2);
+		System.out.print("ë‚˜ëˆ„ê¸° : " + num1 / num2);
 		
 	}
 

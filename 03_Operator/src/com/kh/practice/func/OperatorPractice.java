@@ -7,88 +7,88 @@ public class OperatorPractice {
 	Scanner sc = new Scanner(System.in);
 	
 	public void practice1() {
-		System.out.print("ÀÎ¿ø ¼ö : ");
+		System.out.print("ì¸ì› ìˆ˜ : ");
 		int person = sc.nextInt();
 		
-		System.out.print("»çÅÁ °³¼ö : ");
+		System.out.print("ì‚¬íƒ• ê°œìˆ˜ : ");
 		int candys = sc.nextInt();
 		
-		System.out.println("1ÀÎ´ç »çÅÁ °³¼ö "+ (candys / person));
-		System.out.println("³²´Â »çÅÁ °³¼ö "+ (candys % person));
+		System.out.println("1ì¸ë‹¹ ì‚¬íƒ• ê°œìˆ˜ "+ (candys / person));
+		System.out.println("ë‚¨ëŠ” ì‚¬íƒ• ê°œìˆ˜ "+ (candys % person));
 	}
 
 	public void practice2() {
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		String name = sc.next();
 		
-		System.out.print("ÇĞ³â : ");
+		System.out.print("í•™ë…„ : ");
 		int grade = sc.nextInt();
 		
-		System.out.print("¹İ : ");
+		System.out.print("ë°˜ : ");
 		int classes = sc.nextInt(); 
 		
-		System.out.print("¹øÈ£ : ");
+		System.out.print("ë²ˆí˜¸ : ");
 		int num = sc.nextInt();
 		
-		System.out.print("¼ºº° : ");
+		System.out.print("ì„±ë³„ : ");
 		char ch = sc.next().charAt(0);
 		
-		System.out.print("¼ºÀû : ");
+		System.out.print("ì„±ì  : ");
 		double d = sc.nextDouble();
 		
 		System.out.println(
-				grade+"ÇĞ³â "+classes+"¹İ "+num+"¹ø "+name
-				+(ch == 'M' ? "³²ÇĞ»ı" : "¿©ÇĞ»ı")
-				+ "ÀÇ ¼ºÀûÀº "+d+"ÀÌ´Ù.");
+				grade+"í•™ë…„ "+classes+"ë°˜ "+num+"ë²ˆ "+name
+				+(ch == 'M' ? "ë‚¨í•™ìƒ" : "ì—¬í•™ìƒ")
+				+ "ì˜ ì„±ì ì€ "+d+"ì´ë‹¤.");
 	}
 
 	public void practice3() {
-		System.out.print("³ªÀÌ : ");
+		System.out.print("ë‚˜ì´ : ");
 		int age = sc.nextInt();
 		
-		String str = age <= 13 ? "¾î¸°ÀÌ" : 
-						(age <= 19 ? "Ã»¼Ò³â" : "¼ºÀÎ");
+		String str = age <= 13 ? "ì–´ë¦°ì´" : 
+						(age <= 19 ? "ì²­ì†Œë…„" : "ì„±ì¸");
 		System.out.println(str);
 	}
 
 	public void practice4() {
-		System.out.print("±¹¾î : ");
+		System.out.print("êµ­ì–´ : ");
 		int kor = sc.nextInt();
 		
-		System.out.print("¿µ¾î : ");
+		System.out.print("ì˜ì–´ : ");
 		int eng = sc.nextInt();
 		
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		int math = sc.nextInt();
 		
 		int sum = kor + eng + math;
 		double avg = sum / 3.0;
-		System.out.println("ÇÕ°è : "+sum);
-		System.out.println("Æò±Õ : "+avg);
+		System.out.println("í•©ê³„ : "+sum);
+		System.out.println("í‰ê·  : "+avg);
 		
 		System.out.println(
 				kor >= 40 && eng >= 40 && math >= 40
-				&& avg >= 60.0 ? "ÇÕ°İ" : "ºÒÇÕ°İ");
+				&& avg >= 60.0 ? "í•©ê²©" : "ë¶ˆí•©ê²©");
 	}
 	
 	public void practice5() {
-		System.out.print("ÁÖ¹Î¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(-Æ÷ÇÔ) : ");
+		System.out.print("ì£¼ë¯¼ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(-í¬í•¨) : ");
 		String str = sc.next();
-		char gender = str.charAt(7);// 1 ³² | 2¿©ÀÚ
+		char gender = str.charAt(7);// 1 ë‚¨ | 2ì—¬ì
 		System.out.println(gender == '1' || gender == '3'
-				? "³²ÀÚ" :"¿©ÀÚ" );
+				? "ë‚¨ì" :"ì—¬ì" );
 	}
 	
 	
 	public void practice6(){
-		System.out.print("Á¤¼ö 1 :" );
+		System.out.print("ì •ìˆ˜ 1 :" );
 		int num1 =sc.nextInt();
 
-		System.out.print("Á¤¼ö 2 :" );
+		System.out.print("ì •ìˆ˜ 2 :" );
 		int num2 =sc.nextInt();
 
 
-		System.out.print("ÀÔ·Â :" );
+		System.out.print("ì…ë ¥ :" );
 		int num3 =sc.nextInt();
 
 		System.out.println( num3<=num1 || num3 > num2 ? true : false );
@@ -96,13 +96,13 @@ public class OperatorPractice {
 
 		public void practice7(){
 		 
-		System.out.print("ÀÔ·Â1  :" );
+		System.out.print("ì…ë ¥1  :" );
 		int num1 =sc.nextInt();
 
-		System.out.print("ÀÔ·Â 2 :" );
+		System.out.print("ì…ë ¥ 2 :" );
 		int num2 =sc.nextInt();
 
-		System.out.print("ÀÔ·Â 3 :" );
+		System.out.print("ì…ë ¥ 3 :" );
 		int num3 =sc.nextInt();
 		
 		
@@ -110,13 +110,13 @@ public class OperatorPractice {
 		}
 		public void practice8(){
 
-			System.out.print(" A»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Aì‚¬ì› ì—°ë´‰ : ");
 			int money1 =  sc.nextInt();
 			
-			System.out.print(" B»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Bì‚¬ì› ì—°ë´‰ : ");
 			int money2 = sc.nextInt();
 			
-			System.out.print(" C»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Cì‚¬ì› ì—°ë´‰ : ");
 			int money3 = sc.nextInt();
 			
 			double bonusA= money1 * 0.4;
@@ -127,25 +127,25 @@ public class OperatorPractice {
 			double sumB = money2 + bonusB ;
 			double sumC = money3 + bonusC ;
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money1  + "/"  + sumA 
-					+"\n"+ (sumA>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money1  + "/"  + sumA 
+					+"\n"+ (sumA>= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money2  + "/"  + sumB
-					+"\n"+(sumB>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));		
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money2  + "/"  + sumB
+					+"\n"+(sumB>= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));		
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money3  + "/"  + sumC
-					+"\n"+ (sumC >= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money3  + "/"  + sumC
+					+"\n"+ (sumC >= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));
 		
 		}
 		public void practice9() {
 			
-			System.out.print("Á¤¼ö 1 :");
+			System.out.print("ì •ìˆ˜ 1 :");
 			int num1 =sc.nextInt();
 			
-			System.out.print("Á¤¼ö 2 :");
+			System.out.print("ì •ìˆ˜ 2 :");
 			int num2 =sc.nextInt();
 			
-			System.out.print("ÀÔ·Â  :");
+			System.out.print("ì…ë ¥  :");
 			int put =sc.nextInt();
 			
 			System.out.println(put <= num1 || put> num2 ? true : false);
@@ -154,13 +154,13 @@ public class OperatorPractice {
 		
 		public void practice10() {
 			
-			System.out.print("ÀÔ·Â 1 : ");
+			System.out.print("ì…ë ¥ 1 : ");
 			int num1 =sc.nextInt();
 			
-			System.out.print("ÀÔ·Â 2 : ");
+			System.out.print("ì…ë ¥ 2 : ");
 			int num2 =sc.nextInt();
 			
-			System.out.print("ÀÔ·Â 3 : ");
+			System.out.print("ì…ë ¥ 3 : ");
 			int num3 =sc.nextInt();
 			
 			System.out.println(num1==num2 && num2==num3 && num1 == num3 ? true : false);
@@ -169,13 +169,13 @@ public class OperatorPractice {
 		}
 		public void practice11() {
 			
-			System.out.print(" A»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Aì‚¬ì› ì—°ë´‰ : ");
 			int money1 =  sc.nextInt();
 			
-			System.out.print(" B»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Bì‚¬ì› ì—°ë´‰ : ");
 			int money2 = sc.nextInt();
 			
-			System.out.print(" C»ç¿ø ¿¬ºÀ : ");
+			System.out.print(" Cì‚¬ì› ì—°ë´‰ : ");
 			int money3 = sc.nextInt();
 			
 			double bonusA= money1 * 0.4;
@@ -186,19 +186,15 @@ public class OperatorPractice {
 			double sumB = money2 + bonusB ;
 			double sumC = money3 + bonusC ;
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money1  + "/"  + sumA 
-					+"\n"+ (sumA>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money1  + "/"  + sumA 
+					+"\n"+ (sumA>= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money2  + "/"  + sumB
-					+"\n"+(sumB>= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));		
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money2  + "/"  + sumB
+					+"\n"+(sumB>= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));		
 			
-			System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ + a : " + + money3  + "/"  + sumC
-					+"\n"+ (sumC >= 3000 ? "3000ÀÌ»ó" : "3000¹Ì¸¸"));
+			System.out.println("Aì‚¬ì› ì—°ë´‰/ì—°ë´‰ + a : " + + money3  + "/"  + sumC
+					+"\n"+ (sumC >= 3000 ? "3000ì´ìƒ" : "3000ë¯¸ë§Œ"));
 		}
 		
 		}
 	
-	
-	
-	
-

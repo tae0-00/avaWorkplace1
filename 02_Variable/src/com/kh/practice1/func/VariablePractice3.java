@@ -1,5 +1,6 @@
 package com.kh.practice1.func;
 
+
 import java.util.Scanner;
 
 public class VariablePractice3 {
@@ -8,14 +9,14 @@ public class VariablePractice3 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("°¡·Î : ");
+		System.out.print("Â°Ä„Ë‡ÃŽ : ");
 		double width = sc.nextDouble();
 		
-		System.out.print("¼¼·Î : ");
+		System.out.print("ÅºÅºË‡ÃŽ : ");
 		double height = sc.nextDouble();
 		
-		System.out.println("¸éÀû : " + (width * height));
-		System.out.println("µÑ·¹ : " + (width + height)* 2);
+		System.out.println("Â¸Ã©Å”Å± : " + (width * height));
+		System.out.println("Ä¾ÅƒË‡Å¡ : " + (width + height)* 2);
 		
 	}
 }

@@ -8,31 +8,31 @@ public class CastingPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("±¹¾î : ");
+		System.out.print("êµ­ì–´ : ");
 		double kor = sc.nextDouble();
 		
-		System.out.print("¿µ¾î : ");
+		System.out.print("ì˜ì–´ : ");
 		double eng = sc.nextDouble();
 		
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		double math = sc.nextDouble();
 		
-		System.out.println("ÃÑÁ¡ : "+ (int)(kor + eng + math));
-		System.out.println("ÃÑÁ¡ : "+ (int)(kor + eng + math)/3);
+		System.out.println("ì´ì  : "+ (int)(kor + eng + math));
+		System.out.println("ì´ì  : "+ (int)(kor + eng + math)/3);
 		
-		//¼±»ı´Ô ´äµµ ¿Ö.. Á¤¼ö·Î ³ª¿ÀÁö?
-			System.out.print("±¹ : ");
+		//ì„ ìƒë‹˜ ë‹µë„ ì™œ.. ì •ìˆ˜ë¡œ ë‚˜ì˜¤ì§€?
+			System.out.print("êµ­ : ");
 			double kor1 = sc.nextDouble();
 			
-			System.out.print("¿µ : ");
+			System.out.print("ì˜ : ");
 			double eng2 = sc.nextDouble();
 			
-			System.out.print("¼ö : ");
+			System.out.print("ìˆ˜ : ");
 			double math3 = sc.nextDouble();
 			
 			int total = (int)(kor1 + eng2 + math3);
 			int avg = total / 3;
-			System.out.println("ÃÑÁ¡ : " + total);
-			System.out.println("Æò±Õ : " + avg);
+			System.out.println("ì´ì  : " + total);
+			System.out.println("í‰ê·  : " + avg);
 	
 }}

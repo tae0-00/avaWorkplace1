@@ -8,12 +8,12 @@ public class VariablePractice4 {
 		
 		Scanner sc =new Scanner(System.in);
 		
-		System.out.print("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä. : " );
+		System.out.print("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”. : " );
 		String str = sc.next();
 		
-		System.out.println("Ã¹ ¹øÂ° ¹®ÀÚ : " + str.charAt(0));
-		System.out.println("µÎ ¹øÂ° ¹®ÀÚ : " + str.charAt(1));
-		System.out.println("¼¼ ¹øÂ° ¹®ÀÚ : " + str.charAt(2));
+		System.out.println("ì²« ë²ˆì§¸ ë¬¸ì : " + str.charAt(0));
+		System.out.println("ë‘ ë²ˆì§¸ ë¬¸ì : " + str.charAt(1));
+		System.out.println("ì„¸ ë²ˆì§¸ ë¬¸ì : " + str.charAt(2));
 		
 	}
 

@@ -31,9 +31,8 @@ public class CastingPractice2 {
 		System.out.println( (int)ch + iNum1 ); // 75
 		System.out.println( (char)(ch +iNum1) ); // 'K'
 		
-		//¿Ö ¸¶Áö¸·¸¸ charÀ» µû·Î »©¼­ ÇßÁö?
+		//ì™œ ë§ˆì§€ë§‰ë§Œ charì„ ë”°ë¡œ ë¹¼ì„œ í–ˆì§€?
 }
 }
 
 	
-		
