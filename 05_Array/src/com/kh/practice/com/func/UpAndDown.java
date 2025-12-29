@@ -43,10 +43,6 @@ Scanner sc= new Scanner(System.in);
 		
 		String[] arr= {"가위","바위", "보"};
 			
-			
-		
-			
-			
 			int count1=0;
 			int count2=0;
 			int count3=0;

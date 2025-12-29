@@ -59,4 +59,3 @@ public class D_Logical {
 		System.out.println(num2);// 10
 	}
 	}
-}

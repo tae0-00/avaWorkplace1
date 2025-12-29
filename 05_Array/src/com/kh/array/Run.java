@@ -6,6 +6,8 @@ public class Run {
 
 		A_array aa = new A_array();
 		aa.method2();
+		C_DimensionalArray cc =new C_DimensionalArray();
+		cc.method1();
 	}
 
 	

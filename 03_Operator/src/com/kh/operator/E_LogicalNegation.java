@@ -14,4 +14,4 @@ public class E_LogicalNegation {
 		boolean b2 = !b;
 		
 		boolean b3 = !(5 > 3);
-	}
+	}}

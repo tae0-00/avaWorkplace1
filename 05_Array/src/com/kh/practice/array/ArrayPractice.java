@@ -261,14 +261,14 @@ public class ArrayPractice {
 			System.out.print("문자열을 입력:" );
 			String str =sc.next();
 			
-			char [] arr = str.toCharArray();
+			char [] arr = str.toCharArray();//문자열을 문자배열로 뱐환하느느 메서드
 			
 			System.out.print("문자 : ");
 			char ch = sc.next().charAt(0);
 			
 			
 			System.out.print(str + "에 " + ch+"가 존재하는 위치(인덱스): ");
-			
+			int count =0;
 			//여기서 이제 인덱스 값이랑 그 ch랑 같아지는 순간의 인덱스값을 노게 만들어야하는데
 			//인덱스는 일단 i일테고 if문으로 음 
 			//
@@ -277,9 +277,10 @@ public class ArrayPractice {
 					//ch랑 같아지면 인덱스 i(자리 값)을 나오게 한다는건데 
 					//arr[i]이게 전체의 application을 말하는거 아니고 
 					//arr[1,2,3,4,5,6] 이런식으로 돌다가 그때 ch랑같은 값을 출력하는 번호가 되면 출력된다..!?
+					count++;
 					System.out.print(i + " ");
 				}
-			}
+			}//나 이거 개수 안했다,,
 		}
 		public void practice8() {
 			System.out.print("주민번호를 입력하세요 : ");
@@ -289,10 +290,10 @@ public class ArrayPractice {
 			
 		    char [] org = num.toCharArray();
 		    
-		    char [] copy = Arrays.copyOf(org,org.length);// 여기에 num으로 넣으면 안되요 
-		    //											위에서 org배열 만들었으니까 org배열로 쓰세요~
+		    char [] copy = Arrays.copyOf(org,org.length);// 여기에 num으로 넣으면 안더ㅣㅁ
+		    //											위에서 org배열 만들었으니까 org배열로 써야함
 		   
-		    boolean isDup= false;
+		    boolean isDup= false;//나 이거 왜 함?
 		    for(int i=0; i<copy.length;i++ ) {
 		    	if(i>=8) {
 		    		
@@ -310,14 +311,15 @@ public class ArrayPractice {
 			int [] arr =new int[10];
 			
 			for(int i=0; i< arr.length; i++) {
-				arr[i]=(int)(Math.random()*10)+1;
+				arr[i]=(int)(Math.random()*10)+1;//여기서 나는 랜덤값을 1부터 뽑고싶으니까 +1을 함 만약 0부터 하는거거나 배열안에 문자로 있으면 
+												//안해야 함
 				
-				System.out.print(arr[i]+" ");
+				System.out.print(arr[i]+" ");//선생님 출력ㅁㄴ 항사 ㅇ포문 만들어야하나여?
 			}
 				int max= arr[0];
 				int min =arr[0];
 				for(int i=1; i<arr.length; i++) {
-					if(arr[i]> max ) {
+					if(arr[i]> max ) {//이게랜덤값이라는걸 잘 이해야하람
 						max= arr[i];
 						
 					}
@@ -350,7 +352,7 @@ public class ArrayPractice {
 				//
 				//최대 최소 비교 포문 
 				//저기는 1부터 시작하는 이유는 값이 1부터 나오게 하려고 한거니까 저기서의 i는 출력값 i를 말하는건가,,?
-				//그래서 1부터인거고 ?? 다음은 초기식한 max보다 크다는 의미는 
+				//그래서 1부터인거고 ?? 초기식한 max보다 크다는 의미는 
 				//{1,2,3,4,,9,10}보다 크면 max라는건데 그러면 11이자나? 아닌가? 
 				//똑같이 min도 작으면 0이라는거 아냐?? 이해가 안돼,,
 				//>>그니까 이미 배열안에 있는 값들로 비교를 하는거고 그 안에서 arr[i]의 값들이 하나씩 비교되는데 
@@ -430,9 +432,9 @@ public class ArrayPractice {
 				arr[i]=i+1;
 		
 				if (i <= num / 2) {
-					arr[i] = i + 1;
+					arr[i] = i + 1;//i의 인덱스는 인덱스용으로만 사용하고 안에서 사용은 안하는걸 추천
 				}else {
-					arr[i]=num -i;
+					arr[i]=num -i;//mid 만들어서 해야할듯 
 				}
 				System.out.print(arr[i] + " ");
 			}
@@ -462,14 +464,17 @@ public class ArrayPractice {
 			System.out.print("배열의 크기를 입력하세요: ");
 			int num1 =sc.nextInt();
 			
+			sc.nextLine();//개행문자 제거
+		
 			String [] arr = new String [num1];
 			for(int i=0; i<arr.length; i++) {
 				System.out.print(i+1+"번째 문자열: ");
-				arr[i]=sc.next();
+				arr[i]=sc.nextLine();//띄어쓰기포함. 
 			}
 			while(true) {
 			System.out.print("\n더 값을 입력하시겠습니까? (y/n) :");
-			char ch =sc.next().charAt(0);
+			char ch =sc.nextLine
+					().charAt(0);
 			
 			if(ch=='n'||ch=='N') {
 				break;
@@ -489,7 +494,6 @@ public class ArrayPractice {
 			
 			arr=arr2;//이걸 그냥 이렇게만 해도 배열의 값들이 변하나?
 			}
-			
 			}	
 			 System.out.println(Arrays.toString(arr));
 		} 	
