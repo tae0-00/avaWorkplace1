@@ -76,17 +76,27 @@ ex.
 		}
 		
 		public void practice5() {
+		int hang;
+		int yeol;
+		while(true) {	
 		 System.out.print("행크기 : " );
-		 int hang = sc.nextInt();
-		 
+		  hang = sc.nextInt();
+		
+		 if(hang>0&&hang<10) {
+			 break; }
+			 System.out.print("반드시 1~10 사이의 정수를 입력해야 합니다. ");
+			}
+			 
+		 while(true) {
 		 System.out.print("열 크기 : ");
-		 int yeol = sc.nextInt();
-		 
-		 if(hang<1|| hang>10|| yeol<1|| yeol>10) {
-			 System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다. ");
-			 practice5();
-			 return;
+		 yeol = sc.nextInt();
+		
+		 if(yeol>0&&yeol<10) {
+			 break;
 		 }
+			 System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다. ");
+			}
+		 
 		 char [] [] arr= new char [hang][yeol];
 		 for(int i=0; i<arr.length; i++) {
 			 for(int j=0;j<arr[i].length; j++) {
@@ -99,6 +109,7 @@ ex.
 			 System.out.println(Arrays.toString(arr[i]));
 		 }
 	 }
+		
 		public void practice6() {
 			String [][] strarr = new String [][]
 					{{"이","까","왔","앞","힘"},
