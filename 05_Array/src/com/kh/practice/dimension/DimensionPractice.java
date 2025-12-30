@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class DimensionPractice {
 Scanner sc = new Scanner(System.in);
+	
+
 	public void practice1(){
 		/*
 		 * 3행 3열짜리 문자열 배열을 선언 및 할당하고
@@ -29,10 +31,10 @@ ex.
 	}
 	public void practice2(){
 		int [][] arr= new int [4][4];
-		int v=0;
+		int v=1;
 		for(int i= 0; i<arr.length; i++ ) {
 			for(int j=0; j<arr[i].length; j++) {
-				arr[i][j]=1+v++;
+				arr[i][j]=v++;
 			}
 		}	
 		for(int i= 0; i<arr.length; i++ ) {
@@ -57,20 +59,15 @@ ex.
 		 int [][]arr =new int [4][4];
 		
 		 for(int i =0;i<arr.length-1; i++ ) {
-			 for(int j =0; j<arr[i].length; j++) {
-				 int random =(int)(Math.random()*10+1);
-				 arr[i][j]= random;
+			 for(int j =0; j<arr[i].length-1; j++) {
+				 arr[i][j] =(int)(Math.random()*10+1);
+				 arr[i][3]+= arr[i][j];
+				 arr[3][j]+= arr[i][j];
+				 arr[3][3]+= arr[i][j]*2;
 				
-				 
-				  
-		for(int k=0; i<arr.length-3; k++) {
-			for(int d=0; d<arr[k].length; d++) {
-				//arr[k][d]=
-					}
-			}
 		 }
 		 }
-		 for(int i =0;i<arr.length-1; i++ ) {
+		 for(int i =0;i<arr.length; i++ ) {
 			 System.out.println(Arrays.toString(arr[i]));
 		 }
 		}

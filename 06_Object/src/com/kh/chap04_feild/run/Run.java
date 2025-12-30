@@ -16,6 +16,6 @@ public class Run {
 		 System.out.println(FieldTest3.PI);//객체를 생성하지 않아도 이미 저장공간에 할당 되어있음
 		
 		FieldTest3.test();
-	}
+	}//전에는 새로운 객체를 생성하고 불러 올수 있었음//전이랑 같이 쓸수있지만 권장하지 않고 하지마라,,
 
 }

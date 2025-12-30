@@ -28,7 +28,18 @@ public class FieldTest1 {
 	 * 
 	 */
 	private int global;//필드 
+	{
+		// 초기화 블럭
+		//객채 생성 시 최초 1회 실행
+		global =50;
+	}
 	
+	public static int num;
+	//static 초기화 블럭
+	static {
+		// static 변수를 초가화하는대 사용
+		num=55; //프로그램 실행될떄  최초 1회 실행 
+	}
 	public void test(int num/*매개변수*/) {
 		int local =0;//지역변수 초기화하지 않으면 에러 발생 
 		

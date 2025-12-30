@@ -37,7 +37,7 @@ public class Student {
 	 */
 	public String getName() {
 		//값을 반환하는 방법 :return;
-		return this.name;
+		return this.name;//이 네임을 자료형 스트링에 집어느다?
 	}
 	public void setAge(int age) {//반환할게 없으면 void 사용
 		this.age=age;
