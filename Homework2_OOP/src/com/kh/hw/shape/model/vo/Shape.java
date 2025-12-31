@@ -5,13 +5,17 @@ public class Shape {
 	private int type;
 	private double height;
 	private double width;
-	private String color;
+	private String color="whlte";
 	
 	public Shape() {
 		
 	}
 	public Shape(int type,double height,double width) {
-	
+		this.type=type;
+		this.height= height;
+		this.width=width;
+
+
 	}
 	public String imformation() {
 		String result = height+ width+ color;
