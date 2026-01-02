@@ -27,23 +27,18 @@ public class MethodTest1 {
 			int random =(int)(Math.random()*100+1);
 			
 			return random;
-		}
+		}}
 		//3. ox
-		public void method3(int x ,int y) {
+		/*public void method3(int x ,int y) {
 			int max=0;
 			int min=0;
 			if(x>y) {
 				min=y;
 				max=x;
-			}else(x<y) {
-				 
-				min=x;
-				max=y;
-			}System.out.println("최소값"+ min );
-	}
+			
 		
 		//4/매개변수 0 반환 0
 		public int mul(int a, int b) {
 			return a*b
-		}
+		}*/
 
