@@ -14,6 +14,8 @@ public class MemberMenu {
 	}
 
 	public void mainMenu() {
+		System.out.println(mc.existMemberNum());
+		
 		
 	}
 	public void insertMember() {
