@@ -11,9 +11,10 @@ public class Member {
 	public Member(){
 		
 	}
-	public Member(String id, String name, String email,char gender, int age ) {
+	public Member(String id, String name,String password, String email,char gender, int age ) {
 		this.id=id;
 		this.name=name;
+		this.password=password;
 		this.email=email;
 		this.gender=gender;
 		this.age=age;
@@ -56,7 +57,7 @@ public class Member {
 		this.age = age;
 	}
 
-	public String imformation() {
-		return id+","+name+","+email+","+gender+","+age;
+	public String inform() {
+		return id+","+name+","+password+","+email+","+gender+","+age;
 	}
 }
