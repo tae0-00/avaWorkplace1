@@ -71,7 +71,7 @@ public class Employee {
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
 	}
-	public String printEmployee() {
+	public String printEmployee() {//toString으로 만드리
 		return empNo+","+name+","+gender+","+phone+","+dept+","+salary+","+bonus;
 	}
 }

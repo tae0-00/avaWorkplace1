@@ -3,6 +3,7 @@ package com.kh.hw.employee.view;
 import java.util.Scanner;
 
 import com.kh.hw.employee.controller.EmployeeController;
+import com.kh.hw.employee.model.vo.Employee;
 
 public class EmployeeMenu {
 
@@ -20,24 +21,27 @@ public class EmployeeMenu {
 		int num =sc.nextInt();
 		if(!(num==1 || num==2 || num==3 || num==4 ||num==9)) {
 			System.out.println("잘못입력했습니다. ");
-		}
-		else {
-		switch(num) {
-		case 1 : insertEmp();
-		break;
-		case 2 : updateEmp();
-		break;
-		case 3: deleteEmp();
-		break;
-		case 4 : printEmp();
-		break;
-		case 9 : 
-			System.out.println("프로그램을 종료합니다.");
-			return;
-		}
-		}
+		} else {
+			switch (num) {
+			case 1:
+				insertEmp();
+				break;
+			case 2:
+				updateEmp();
+				break;
+			case 3:
+				deleteEmp();
+				break;
+			case 4:
+				printEmp();
+				break;
+			case 9:
+				System.out.println("프로그램을 종료합니다.");
+				return;//디폴트로 해도 되는구나
+			}
 		}
 	}
+}
 	public void insertEmp() {
 		
 		System.out.print("사원 번호 :");
@@ -97,7 +101,7 @@ public class EmployeeMenu {
 				ec.modify(bo);
 				break;
 			case 9:
-				System.out.print("메인메뉴로 돌아갑니다.");
+				System.out.println("메인메뉴로 돌아갑니다.");
 				return;
 			}
 		}
@@ -107,7 +111,7 @@ public class EmployeeMenu {
 		System.out.println("정말 삭제하겠습니까 (y/n)");
 		String yes= sc.next();
 		if(yes.equals("y")||yes.equals("Y")) {
-			ec.remove();
+			Employee e = ec.remove();
 			System.out.println("삭제에 성공했습니다.");
 		}
 		else {

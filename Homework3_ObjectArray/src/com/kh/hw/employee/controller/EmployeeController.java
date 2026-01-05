@@ -23,7 +23,7 @@ public class EmployeeController {
 		e.setBonus(bonus);
 	}
 	public Employee remove() {//백업을 해야한다,,? 그래야지 결과값을 쓸수 있다??
-		Employee del=e;
+		Employee del=e; //r기존 주소값 복사
 		e= null;
 		return del;
 	}

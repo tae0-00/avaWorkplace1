@@ -21,14 +21,14 @@ public class MethodTest1 {
 	
 		//return; 생략 되어있음 
 	}
-<<<<<<< HEAD
+
 		//2. 매개변수는 없고 반환형은 있는 메서드 
 		public int method2() {
 			System.out.println("매개변수 있고 반환형은 없다 ");
 			int random =(int)(Math.random()*100+1);
 			
 			return random;
-		}}
+		}
 		//3. ox
 		/*public void method3(int x ,int y) {
 			int max=0;
@@ -49,9 +49,8 @@ public class MethodTest1 {
 		public int mul(int a, int b) {
 			return a*b
 		}*/
-=======
-		return random;
-	}
+
+	
 	
 	// 3. 매개변수 o , 반환형 x
 	public void method3(int x, int y) {
@@ -73,5 +72,4 @@ public class MethodTest1 {
 		return a * b;
 	}
 }
->>>>>>> branch 'main' of https://github.com/tae0-00/avaWorkplace1.git
 

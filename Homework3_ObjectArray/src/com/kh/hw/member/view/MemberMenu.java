@@ -16,25 +16,21 @@ public class MemberMenu {
 
 	public void mainMenu() {
 
-		
-		
-
 		while(true){
-	System.out.println("최대등록 가능한 회원수는 "+ MemberController.SIZE+"명 입니다.");
-		System.out.println("현재등록된 회원 수는 "+ mc.existMemberNum()+"명 입니다.");
-		if(!(mc.existMemberNum()==MemberController.SIZE)) {
-			System.out.println("1. 새 회원 등록 : ");
-		}
-		else {
-		System.out.println("회원수가 모두 찼기때문에 일부 메뉴만 오픈됩니다.");
-		}
-		System.out.println("2. 회원 검색 : ");
-		System.out.println("3. 회원 수정 : ");
-		System.out.println("4. 회원 삭제 : ");
-		System.out.println("5. 모두 출력 : ");
-		System.out.println("9. 끝내기 ");
-		System.out.print("메뉴번호 : ");
-
+			int membernum = mc.existMemberNum();
+			System.out.println("최대등록 가능한 회원수는 " + MemberController.SIZE + "명 입니다.");//생성시점이 달라서 mc.size는 안된다
+			System.out.println("현재등록된 회원 수는 " + mc.existMemberNum() + "명 입니다.");
+			if (!(mc.existMemberNum() == MemberController.SIZE)) {
+				System.out.println("1. 새 회원 등록 : ");
+			} else {
+				System.out.println("회원수가 모두 찼기때문에 일부 메뉴만 오픈됩니다.");
+			}
+			System.out.println("2. 회원 검색 : ");
+			System.out.println("3. 회원 수정 : ");
+			System.out.println("4. 회원 삭제 : ");
+			System.out.println("5. 모두 출력 : ");
+			System.out.println("9. 끝내기 ");
+			System.out.print("메뉴번호 : ");
 		
 		int num = sc.nextInt();
 		if(!(num==1 || num==2 || num==3|| num ==4|| num==5|| num==9)) {
@@ -43,25 +39,35 @@ public class MemberMenu {
 		}
 		if(mc.existMemberNum()==MemberController.SIZE&&num==1) {
 			System.out.println("잘못입력했습니다. 다시 입력해주세요. ");
-			continue;
+			continue;//위에서 안하고 스위치문 안에서 해도 된다.. 
 		}
-		
-		switch(num) {
-		case 1: insertMember();
-		break;
-		case 2 : searchMember();
-		break;
-		case 3 : updateMember();
-		break;
-		case 4 : deleteMember();
-		break;
-		case 5 : printAll();
-		break;
-		case 9 : System.out.println("프로그램 종료합니다. ");
-		return;
+
+		switch (num) {
+		case 1:
+			//if(mc.existMemberNum()==MemberController.SIZE){
+			insertMember();//
+			break;
+			//}else {
+			//sysout.print("잘못입력햇습니다.");
+			//}
+		case 2:
+			searchMember();
+			break;
+		case 3:
+			updateMember();
+			break;
+		case 4:
+			deleteMember();
+			break;
+		case 5:
+			printAll();
+			break;
+		case 9:
+			System.out.println("프로그램 종료합니다. ");
+			return;
 		}
 	}
-	}
+}
 
 	public void insertMember() {
 		System.out.println("새 회원을 등록합니다.");
@@ -70,8 +76,8 @@ public class MemberMenu {
 		while(mc.checkId(id)) {
 			
 			System.out.println("중복된 아이디입니다.  다시 입력헤주세요 ");
-			System.out.print("아이디 : ");
-			id = sc.next(); 
+			insertMember();
+			return;//이거 확인해 봐애겟다
 			
 		}
 		System.out.print("이름 : ");
@@ -81,7 +87,7 @@ public class MemberMenu {
 		System.out.print("이메일 : ");
 		String email = sc.next();
 		System.out.print("성별(M/F) :");
-		char gender;
+		char gender='\u0000';//이게 채릭터 초기화값
 		while(true) 
 		{ gender = sc.next().charAt(0);
 		if(gender=='f'||gender=='F'||gender=='m'||gender=='M') {
@@ -97,7 +103,7 @@ public class MemberMenu {
 		
 	}
 	public void searchMember() {
-		
+		while(true) {
 		System.out.println("1. 아이디 검색하기 ");
 		System.out.println("2.이름으로 검색하기 ");
 		System.out.println("3. 이메일로 검색하기 ");
@@ -123,11 +129,12 @@ public class MemberMenu {
 		mainMenu();
 		return;
 		}	
+		}
 	}
 	public void searchId() {
 		System.out.println("검색할 아이디를 입력하세요 : ");
 		String id=sc.next();
-		 String result =mc.searchId(id);
+		String result =mc.searchId(id);//메소드의 매개변수로 넘김이 이 코드임 반환값에 따른게 필요해서 리절트를 만들었음 매개변수는 id임
 		if(result==null) {
 			System.out.println("검색 결과 없습니다");
 			mainMenu();
@@ -338,6 +345,13 @@ public class MemberMenu {
 	}
 	public void printAll() {
 		Member [] all= mc.printAll();
+	/*	int memnum= mc.existMemberNum(); 
+		
+		if(memnum==0) {
+			System.out.println("저장된 회원이 없습니다. ");
+			return;
+			이방식도 가능
+		}*/
 		if(all==null||all.length==0) {
 			System.out.println("저장된 회원이 없습니다. ");
 		}
