@@ -25,7 +25,7 @@ public class PersonMenu {
 		System.out.println("1. 학생메뉴 ");
 		System.out.println("2. 사원메뉴");
 		System.out.println("9. 끝내기");
-		System.out.println("메뉴번호 :");
+		System.out.print("메뉴번호 :");
 		int menu= sc.nextInt();
 		
 		switch(menu) {
@@ -55,13 +55,13 @@ public class PersonMenu {
 		}
 		System.out.println("2. 학생보기");
 		System.out.println("9. 메인으로");
-		System.out.println("메뉴번호");
+		System.out.print("메뉴번호");
 		int num = sc.nextInt();
 		switch(num) {
 		case 1:
 			if (arr[0]>=3) {
-				System.out.println("잘못입력");
-				break;
+				System.out.println("잘못입력, 다시 입력");
+				continue;//브레이크 아님 다시 압력해야햇 
 			}
 			insertStudent();
 			break;
@@ -132,8 +132,8 @@ public class PersonMenu {
 		//이부분 이상함
 		pc.insertStudent(name, age, height, weight, grade, major);
 		
-		arr = pc.personCount();
-		studentc = arr[0];
+		arr = pc.personCount();//이거 다시 해줘야함 값을 받고 값을 바뀐거라서 
+		studentc = arr[0];//이거 다시 해줘야함 값을 받고 값을 바뀐거라서 
 		
 		if (studentc>=3) {
 			System.out.println("다차서 추가를 종료하고 학생메뉴로 갑니다. ");

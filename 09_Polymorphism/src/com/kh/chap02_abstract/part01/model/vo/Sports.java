@@ -1,6 +1,6 @@
 package com.kh.chap02_abstract.part01.model.vo;
 
-
+//기우러진체는 추상클래스 추살메서드
 //추상메서드가 존재하는 순간 반드시 추상클레스로 정의해야한다. 앞에  abstract을 붙임
 public abstract class Sports {
 

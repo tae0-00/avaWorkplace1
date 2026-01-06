@@ -10,6 +10,8 @@ public class PersonController {
 	private Employee[] e = new Employee[10];
 	
 	public int []  personCount() {
+		//새로운 배열을 먼저 만드는 방법을 활용하면 리턴하기가 편함
+		int [] arr= new int [2];
 		int scount=0;
 		int ecount=0;
 		for(int i=0; i<s.length; i++) {
@@ -26,9 +28,10 @@ public class PersonController {
 	}
 	public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
 		for(int i=0; i<s.length; i++) {//여기서는 향상된 반복문 쓰면 안돼
-			if(s[i]==null) {
-				s[i]=new Student(name, age, height, weight, grade, major);
-				
+			if(s[i]==null) {//빈곳 발견
+				s[i]=new Student(name, age, height, weight, grade, major);//입력값 집어넣어
+				//Student std [] =new =new Student(name, age, height, weight, grade, major);
+				//하고 그냥 std로 해도ㅗ담
 				break;
 			}
 		}
