@@ -1,7 +1,8 @@
 package com.kh.practice.chap01_poly.controller;
 
+import java.lang.FdLibm.Cbrt;
+
 import com.kh.practice.chap01_poly.model.vo.*;
-import com.kh.practice.chap01_poly.model.vo.Member;
 
 public class LibraryController {
 
@@ -18,26 +19,86 @@ public class LibraryController {
 		bList[4] = new CookBook("최현석 날 따라해봐", "최현석", "소금책", true);
 	}
 	public void insertMember(Member mem) {
-		for(int i=0; i<bList.length; i++ ) {
-			bList[i].
+		this.mem=mem;
 		}
 		
-	}
+	
 	public Member myInfo() {
-		for(int i=0; i<bList.length; i++ ) {
-			
-			
-		}
+		return this.mem;
 		
 	}
 	public Book[] selectAll() {
-		for(int i=0; i<bList.length; i++ ) {
-			bList[i].
+		return bList;
+		
 	}
 	public Book[] searchBook(String keyword) {
-		
+		Book [] bArr= new Book[5];
+		int count = 0;
+		for(int i=0; i<bList.length; i++) {
+			if(bList[i].getTitle().contains(keyword)){//같은게 아니라 포함하고 있는 개념이라 컴테인 사용
+				bArr[count]=bList[i];
+			}
+		}
+		return bArr;
 	}
 	public int rentBook(int index) {
+		int result= 0;
+		Book book= bList[index];//를 사용해야함 
 		
+		//b instanceof AniBook;//instanceof는 boolean을 반환 그래서 보통 조건식에 사용
+		//아니면 booiean자료형에 담아서 사용할수 있긴 함
+		if(book instanceof AniBook) {
+			AniBook ani = (AniBook) book; 
+			if(mem.getAge()<ani.getAccessAge()) {
+				result=1;
+			}
+		}
+		if(book instanceof CookBook) {
+			CookBook cb = (CookBook)book;
+			if(cb.isCoupon()) {
+				mem.getCouponCount()+1;
+				//이거 안돼,,, 
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		for(int i=0; i<bList.length;i++) {
+//			if(bList[i] instanceof AniBook) {
+//			  AniBook ani = (AniBook)bList[i];
+//			  if(mem.getAge()<ani.getAccessAge()) {
+//				  result =1;
+//			  }
+//			}
+//		}
+//		for(int i=0; i<bList.length;i++) {
+//			if(bList[i] instanceof CookBook) {
+//				CookBook cb = (CookBook)bList[i];
+//				if(cb.isCoupon()==true) {
+//				int num=mem.getCouponCount()+1;
+//				num+=1;
+//				result =2;
+//				
+//				}
+//			}
+//		}
+//		return result;
+//		}
+		//이거는 포문으로 하면 안되는건가??
 	}
-}
+			
+}	
+	
+

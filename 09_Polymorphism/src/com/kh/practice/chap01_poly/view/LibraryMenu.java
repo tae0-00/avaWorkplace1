@@ -40,6 +40,8 @@ public class LibraryMenu {
 			case 9 :
 				System.out.println("종료합니다.");
 				return;
+			default : 
+				System.out.println("잘못입력하셨습니다. ");
 			}
 		}
 	}
@@ -55,14 +57,20 @@ public class LibraryMenu {
 	
 	public void searchBook() {
 	
+		//여기서 검색 결과 는 코드 만들어야 함
+		
 		System.out.println("검색할 제목 키어드 ");
 		String keyword= sc.next();
 		Book [] searchList = lc.searchBook(keyword);//이부분이 넘기는 건데 얘는 배열을 맞춰줌 
-		System.out.println(searchList);//이건 배열 출력이 안되겠지??
+		for(int i=0; i<searchList.length; i++) {
+			System.out.println(searchList[i]);
+			}
+		}
+		//이건 배열 출력이 안되겠지??그래서 포문 사용해야하는데
 		
 		
 		
-	}
+	
 	public void rentBook() {
 	
 		selectAll();
@@ -79,7 +87,9 @@ public class LibraryMenu {
 			break;
 		case 2 : 
 			System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이 페이지에서 확인하세요  ");
-			return;
+			return;//여기는 브레이크가 맞다??
+		default : 
+			System.out.println("잘못입력하셨습니다. ");
 		}
 		
 	}
