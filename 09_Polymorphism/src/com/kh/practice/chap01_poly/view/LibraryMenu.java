@@ -57,9 +57,10 @@ public class LibraryMenu {
 	
 		System.out.println("검색할 제목 키어드 ");
 		String keyword= sc.next();
-		lc.searchBook();
+		Book [] searchList = lc.searchBook(keyword);//이부분이 넘기는 건데 얘는 배열을 맞춰줌 
+		System.out.println(searchList);//이건 배열 출력이 안되겠지??
 		
-		Book [] 
+		
 		
 	}
 	public void rentBook() {
@@ -67,6 +68,7 @@ public class LibraryMenu {
 		selectAll();
 		System.out.println("대여할 도서 번호 선택 :");
 		int index = sc.nextInt();
+		int result = lc.rentBook(index);// 이부분이 넘기는거
 		
 		switch(result) {
 		case 0 : 
@@ -76,7 +78,7 @@ public class LibraryMenu {
 			System.out.println("나이 제한으로 대여 불가능 합니다.");
 			break;
 		case 2 : 
-			System.out.println("성공저으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이 페이지에서 확인하세요  ");
+			System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이 페이지에서 확인하세요  ");
 			return;
 		}
 		
