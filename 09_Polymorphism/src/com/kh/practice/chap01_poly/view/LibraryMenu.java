@@ -64,5 +64,21 @@ public class LibraryMenu {
 	}
 	public void rentBook() {
 	
+		selectAll();
+		System.out.println("대여할 도서 번호 선택 :");
+		int index = sc.nextInt();
+		
+		switch(result) {
+		case 0 : 
+			System.out.println("성공적으로 대여되었습니다");
+		    break;
+		case 1 : 
+			System.out.println("나이 제한으로 대여 불가능 합니다.");
+			break;
+		case 2 : 
+			System.out.println("성공저으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이 페이지에서 확인하세요  ");
+			return;
+		}
+		
 	}
 }
