@@ -11,14 +11,17 @@ public class LeapView {
 	public LeapView() {
 		 Calendar today = Calendar.getInstance();
 		 Calendar m1 =new GregorianCalendar(1,1,1);
+		 LeapController lc =new LeapController();
 		
-		long num1=today.getTimeInMillis();
-		long num2=m1.getTimeInMillis();
+		 int year=today.get(Calendar.YEAR);
+		if(lc.isLeapYear(year)) {
+			System.out.println(year+"은 윤년입니다.");
+		}
+		else {
+			System.out.println(year+"은 평년입니다. ");
+		}
 		
-		long days=(num1-num2)/1000/60/60/24;
-		
-		System.out.println("총 날짜 수: "+days);
-		
+		System.out.println("총 날짜 수: "+lc.leapDate(today));
 		
 	}
 
