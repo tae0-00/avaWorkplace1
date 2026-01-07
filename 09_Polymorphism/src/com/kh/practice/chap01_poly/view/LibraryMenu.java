@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.kh.practice.chap01_poly.controller.LibraryController;
 import com.kh.practice.chap01_poly.model.vo.Book;
+import com.kh.practice.chap01_poly.model.vo.Member;
 
 public class LibraryMenu {
 	
@@ -14,6 +15,18 @@ public class LibraryMenu {
 		
 	}
 	public void mainMenu() {
+		System.out.println("이름");
+		String name = sc.next();
+		
+		System.out.println("나이");
+		int age = sc.nextInt();
+		
+		System.out.println("성별");
+		char gender = sc.next().charAt(0);
+
+		Member mem =new Member(name,age,gender);
+		lc.insertMember(mem);
+		
 		while(true) {
 			System.out.println("===메뉴===");
 			System.out.println("1. 마이페이지");
@@ -61,9 +74,12 @@ public class LibraryMenu {
 		
 		System.out.println("검색할 제목 키어드 ");
 		String keyword= sc.next();
+		
 		Book [] searchList = lc.searchBook(keyword);//이부분이 넘기는 건데 얘는 배열을 맞춰줌 
 		for(int i=0; i<searchList.length; i++) {
+			if(searchList[i]!=null) {//여기 널값을 제외하고 널값이 안보이게 하고싶다면 이 조건식을 넣어줌 
 			System.out.println(searchList[i]);
+			}
 			}
 		}
 		//이건 배열 출력이 안되겠지??그래서 포문 사용해야하는데

@@ -1,6 +1,4 @@
-package com.kh.chap02_controller;
-
-import java.util.StringTokenizer;
+package com.kh.chap02_String.controller;
 
 public class B_StringBuilderAndBuffer {
 	/*
@@ -38,28 +36,11 @@ public class B_StringBuilderAndBuffer {
 		
 		//특정 위치의 문자를 삭제
 		System.out.println("마지막 위치의 문자 삭제하기 : "+ sb1.deleteCharAt(sb1.length()-1));
-	}
-        
-	public void method2() {
-String str =  "J a v a P r o g r a m ";
 		
-		System.out.println(str);
-		System.out.println(str.length());
-		
-		StringTokenizer stn= new StringTokenizer(str," ");
-		
-		while(stn.hasMoreTokens()) {
-			System.out.print(stn.nextToken());
-			
-		}
-		System.out.println(str.length());
-		System.out.println(str.toUpperCase());
-		
-	}
 	}
 
 	
 	
 	
 
-
+}
