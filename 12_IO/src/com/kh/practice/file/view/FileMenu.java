@@ -41,32 +41,42 @@ public class FileMenu {
 	}
 
 	public void fileSave() {
-		
+	    StringBuilder sb = new StringBuilder();
 		while(true) {
 			System.out.println("파일에 저장할 내용을 입력하세요");
 			System.out.println("ex끝it이라고 입력하면 종료됩니다.");
 			System.out.println("내용 :");
-			String input = sc.next();
-			StringBuilder sb=new StringBuilder(input);
+			String input = sc.nextLine();
+			//StringBuilder sb=new StringBuilder(input);
 			if(input.equals("ex끝it")) {
+				break;
+			}
+			sb.append(input);
+		}
+		
+			while(true) {
 				System.out.println("저장할 파일명을 입력해주세요.(ex. myFile.txt) : ");
-				String name=sc.next();
+				String name=sc.nextLine();
 				boolean isdup= fc.checkName(name);
 				if(isdup) {
 					System.out.println("이미 존재하는 파일입니다, 덮어쓰심?(y/n)");
 					char ch = sc.next().toUpperCase().charAt(0);
-					if(ch=='y') {
+					
+					if(ch=='Y') {
 						fc.fileSave(name, sb);
-					}else {
-						System.out.println("저장할 파일명을 입력해주세요");
-						fc.fileSave(name, sb);
-					}
+						System.out.println("저장완료했습니다. ");
+						return;
+					}else  if (ch == 'N'){
+						continue;
+					} else {
+				        fc.fileSave(name, sb);
+				        return;
 				}
-			}
-			return;
+					  
+				}
 		}
 	}
-
+	 
 	public void fileOpen() {
 
 		System.out.println("열 파일 명");
@@ -74,7 +84,8 @@ public class FileMenu {
 		
 		boolean isdup= fc.checkName(name);
 		if(isdup) {
-			System.out.println(fc.checkName(name));
+			 StringBuilder sb = fc.fileOpen(name);
+			 System.out.println(sb);
 		}else {
 			System.out.println("없는 파일입니다.");
 			return;
@@ -83,22 +94,25 @@ public class FileMenu {
 
 	public void fileEdit() {
 		System.out.println("수정할 파일 명 :");
-		String edit = sc.next();
+		String edit = sc.nextLine();
 		
-		boolean isdup=fc.checkName(edit);
-		if(isdup) {
+		if (!fc.checkName(edit)) {
+	        System.out.println("파일이 존재하지 않습니다.");
+	        return;
+	    }
+		StringBuilder sb= new StringBuilder();
+		while(true) {
+		
 			System.out.println("파일에 저장할 내용을 입력하세요");
 			System.out.println("ex끝it이라고 입력하면 종료됩니다.");
 			System.out.println("내용 :");
-			String input = sc.next();
-			StringBuilder sb= new StringBuilder(input);
+			String input = sc.nextLine();
+			
 			if(input.equals("ex끝it")) {
-				fc.fileEdit(edit, sb);
-				return;
-			}else {
-				System.out.println("없는 파일입니다.");
-				fc.fileEdit(edit, sb);
-				
+				break;
+				sb.append(input);
+			}
+			fc.fileEdit(edit, sb);	
 			}
 		}
 	}
