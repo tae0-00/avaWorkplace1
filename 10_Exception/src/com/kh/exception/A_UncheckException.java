@@ -1,5 +1,6 @@
 package com.kh.exception;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class A_UncheckException {
@@ -57,4 +58,58 @@ public class A_UncheckException {
 		}
 		System.out.println("종료");
 	}
+	public void method2() {
+		System.out.println(" ㅈ어수 입력: (0제외) : ");
+		try {
+			int num =sc.nextInt();
+			System.out.println("나누셈 연산 "+(10/num));
+		}catch(ArithmeticException e) {
+			System.out.println("0으로 나눌수 없음 ");
+		}catch(InputMismatchException e) {
+			System.out.println("정수 제댜로 입력");
+		}//다중 예외처리문법 : 예외가 여러개인 경우 사용한다 
+		
+	
+		System.out.println("종료");
+	}
+	public void method3() {
+		//ArrayIndexoutofBoundException
+		//NegativeArraySizeException
+		System.out.println("ㅂ1ㅐ열의ㅡ 크기 : ");
+		int size =sc.nextInt();
+		//예외처리 방법 1 다중 캐치블럭 
+		try {
+			int [] arr = new int[size];
+			System.out.println("100번쨰 인덱스의 값 : "+ arr[100]);
+			
+			}catch(NegativeArraySizeException e){
+				System.out.println("배열은 음수일수 어ㅓㅄ음");
+			}catch(ArrayIndexOutOfBoundsException s) {
+				System.out.println("부적절한 인덱스 ");
+			}
+		//처리 방법 2. 다형성을 이용한 캐치블럭 만들기
+		try {
+		int [] arr = new int[size];
+		System.out.println("100번쨰 인덱스의 값 : "+ arr[100]);
+		}
+		//범위가 작은 자식클래스를 먼저 기술해야함 
+		catch(ArrayIndexOutOfBoundsException e) {//얘를 꼭 따로 하고싶으면 얘를 먼저 캐치문 돌ㄹ려줘함 
+			System.out.println("잘못된 인덱스 접근입니다. ");
+		}
+		catch(RuntimeException e){//다형성을 적용
+			System.out.println("예외가 발생햇습니다.");
+			e.printStackTrace();
+			/*
+			 * 런타임 관련된 예외는 
+			 * -조건문으로 해결이 가능하기 떄문에 예외 자체가 애초에 발생 안되게끔 개발자가 스스로 핸들링하는게 권장된다.
+			 * -예외처리 구문으로 해결이 가능은 하다
+			 * 
+			 * 예측이 가능한 상황 =>>조건문으로 해경
+			 * 예측이 불가능한 상환->>예외처리 구문으로 해결
+			 */
+		}
+		
+		
+	}
 }
+

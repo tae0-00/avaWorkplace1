@@ -1,10 +1,12 @@
 package com.kh.exception.run;
 
 import com.kh.exception.A_UncheckException;
+import com.kh.exception.B_CheckadException;
+import com.kh.exception.C_CustomException;
 
 public class Run {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws C_CustomException {
 		/*
 		 * 에러 (오류) 종류
 		 * -시스템오류
@@ -33,7 +35,14 @@ public class Run {
 		 */
 
 		A_UncheckException a= new A_UncheckException();
-		a.method1();
+		//a.method3();
+		B_CheckadException b= new B_CheckadException();
+		//b.method1();
+		
+		//에러강제 발생
+		// throw new 에러클래스 생성자(에러메세지):
+		throw new C_CustomException("에러발생");
+		
 	}
 
 }
