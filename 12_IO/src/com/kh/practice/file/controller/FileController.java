@@ -15,6 +15,7 @@ public class FileController {
 	public void fileSave(String file, StringBuilder sb) {
 		String edit=sb.toString();
 		fd.fileSave(file, edit);
+		fd.fileSave(file, sb.toString());
 	}
 	public StringBuilder fileOpen(String file) {
 		return fd.fileOpen(file);

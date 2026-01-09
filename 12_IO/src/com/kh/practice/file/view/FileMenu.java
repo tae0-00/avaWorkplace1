@@ -20,6 +20,7 @@ public class FileMenu {
 		System.out.println("9. 끝내기 ");
 		System.out.println("메뉴 번호 :");
 		int menu =sc.nextInt();
+		sc.nextLine();//개행해줘야함
 		
 		switch(menu) {
 		case 1 : 
@@ -45,13 +46,13 @@ public class FileMenu {
 		while(true) {
 			System.out.println("파일에 저장할 내용을 입력하세요");
 			System.out.println("ex끝it이라고 입력하면 종료됩니다.");
-			System.out.println("내용 :");
+			System.out.print("내용 :");
 			String input = sc.nextLine();
 			//StringBuilder sb=new StringBuilder(input);
 			if(input.equals("ex끝it")) {
 				break;
 			}
-			sb.append(input);
+			sb.append(input+"\n");
 		}
 		
 			while(true) {
@@ -60,7 +61,7 @@ public class FileMenu {
 				boolean isdup= fc.checkName(name);
 				if(isdup) {
 					System.out.println("이미 존재하는 파일입니다, 덮어쓰심?(y/n)");
-					char ch = sc.next().toUpperCase().charAt(0);
+					char ch = sc.nextLine().toUpperCase().charAt(0);
 					
 					if(ch=='Y') {
 						fc.fileSave(name, sb);
@@ -72,7 +73,8 @@ public class FileMenu {
 				        fc.fileSave(name, sb);
 				        return;
 				}
-					  
+				//break;?
+					//아닌경ㅇ우 먼저 만들고 중복 줄이기 
 				}
 		}
 	}
@@ -86,6 +88,7 @@ public class FileMenu {
 		if(isdup) {
 			 StringBuilder sb = fc.fileOpen(name);
 			 System.out.println(sb);
+			// System.out.println( fc.fileOpen(name)); 이것도 되네 
 		}else {
 			System.out.println("없는 파일입니다.");
 			return;
@@ -110,10 +113,15 @@ public class FileMenu {
 			
 			if(input.equals("ex끝it")) {
 				break;
-				sb.append(input);
+				
 			}
+			
 			fc.fileEdit(edit, sb);	
 			}
 		}
+	// 중복되는 조건들을 메서드에 담고 이 메서드만 불러옴 
+	//private StringBuilder adtext() {
+		
+	//}
 	}
-}
+

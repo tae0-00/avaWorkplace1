@@ -36,26 +36,48 @@ public class FileDAO {
 	}
 	
 	public StringBuilder fileOpen(String file) {
+//		 StringBuilder sb = new StringBuilder();
+//		 
+//		if(checkName(file)) {
+//			return sb;
+//		}
+//		BufferedReader br;
+//		
+//		try {
+//			br = new BufferedReader(new FileReader(file));
+//		} catch (FileNotFoundException e) {
+//
+//			e.printStackTrace();
+//		}
+//		
+//		
+//		
+//		return sb;
+//		
+		FileReader fr =null;
 		 StringBuilder sb = new StringBuilder();
-		 
-		if(checkName(file)) {
-			return sb;
-		}
-		BufferedReader br;
-		
-		try {
-			br = new BufferedReader(new FileReader(file));
-		} catch (FileNotFoundException e) {
-
+		 try {
+			fr = new  FileReader(file);
+			
+			int v =0;
+			while((v =fr.read())!=-1) {
+				sb.append((char)v);
+			}
+		} catch (IOException e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		 return sb;
 		
-		
-		
-		return sb;
 		
 	}
-	public void fileEdit(String file, String s) {
+	public void fileEdit(String file, String s) {//이거 파일로 다시 만들기
 		StringBuilder sb = new StringBuilder();
 		if(checkName(file)==false) {
 			return;
