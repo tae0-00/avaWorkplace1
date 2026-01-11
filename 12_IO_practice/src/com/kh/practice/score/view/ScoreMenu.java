@@ -32,13 +32,14 @@ public class ScoreMenu {
 				saveScore();
 				break;
 			case 2: 
-				readScore();
+				//readScore();
 				break;
 			case 9 :
 				System.out.println("프로그램 종료");
 				return;
 			default :
 				System.out.println("잘못입력 다시 입력");
+				return;
 			}
 		}
 	}	
@@ -65,43 +66,6 @@ public class ScoreMenu {
 		
 		if(ch=='n') {
 			return;
-			}
-		}
-	}
-	public void readScore() {
-		int count =0;
-		int sumAll=0;
-		double avgAll=0.0;
-		//ScoreDao [] arr= new ScoreDao[6];
-		
-		try {
-			DataInputStream dis = scr.readScore();
-			
-			while(true) {
-				try {
-				System.out.println("이름 \t국어\t영어");
-					String name= dis.readUTF();
-					int kor = dis.readInt();
-					int eng = dis.readInt();
-					int math = dis.readInt();
-					int sum =dis.readInt();
-					double avg = dis.readDouble();
-					
-					count++;
-					sumAll++;
-					avgAll++;
-					
-					
-				}
-					
-				catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-				catch(EOFException e) {
-					System.out.println(count+"\t"+sumAll+"\t"+avgAll);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 			}
 		}
 	}

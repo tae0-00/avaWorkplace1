@@ -1,21 +1,21 @@
 package com.kh.practice.book.controller;
 
-import java.awt.print.Book;
+//import java.awt.print.Book;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import com.kh.practice.book.model.dao.BookDAO;
+import com.kh.practice.book.model.vo.Book;
 
 public class BookController {
 
 	private BookDAO bd = new BookDAO();
 	
-	public BookController() {
-		
+	public BookController() {		
 	}
 	public void makeFile() {
-		File file =new File("text.txt");
+		File file =new File("book.txt");
 		try {
 			file.createNewFile();
 		} catch (IOException e) {

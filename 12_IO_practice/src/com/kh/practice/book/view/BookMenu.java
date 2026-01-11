@@ -1,6 +1,6 @@
 package com.kh.practice.book.view;
 
-import java.awt.print.Book;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import java.util.Scanner;
 import java.util.spi.CalendarDataProvider;
 
 import com.kh.practice.book.controller.BookController;
+import com.kh.practice.book.model.vo.Book;
 
 public class BookMenu {
 
@@ -70,19 +71,28 @@ public class BookMenu {
 			
 			
 			System.out.println("할인율 :");
+			double discount = sc.nextDouble();
 			
+			
+			Book book = new Book ( title, author, price, cal, discount );	
+			
+			
+			for(int i=0; i<bArr.length; i++) {
+				if(bArr[i]==null) {
+					bArr[i]=book;
+					bc.fileSave(bArr);
+					break;
+				}
+			}
+			return;
 		}
 	}
 	public void fileRead() {
-		bc.fileRead();
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("book.txt"));){
-			System.out.println(ois.readUTF()+
-					ois.readUTF()+ois.readInt()+ois.read);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		bArr =bc.fileRead();//배열에 값을 넣어야지 그냥 하는건 호출인가?
+		for(int i=0; i<bArr.length; i++) {
+			System.out.println(bArr[i]);
 		}
+		
 				
 		
 		

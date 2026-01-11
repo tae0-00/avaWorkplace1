@@ -80,11 +80,10 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 ");
 		// sdf.format(Date 객체) : 문자열반환
-		String formateDate = sdf.format(new Date());
-		return "Book [title=" + title + ", author=" + author + ", price=" + price + ", date=" + formateDate + ", discount="
-				+ discount + "]";
+		String formateDate = sdf.format(date.getTime());
+		return  title +"\t"+  author +"\t"+   price  +"\t" + formateDate + "\t"+discount ;
 	}
 	
 }
