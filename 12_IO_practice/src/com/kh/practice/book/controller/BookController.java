@@ -16,11 +16,14 @@ public class BookController {
 	}
 	public void makeFile() {
 		File file =new File("book.txt");
-		try {
-			file.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+		
 	}
 	
 	public void fileSave ( Book [] bArr) {

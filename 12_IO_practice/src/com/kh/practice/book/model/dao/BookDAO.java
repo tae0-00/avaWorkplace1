@@ -39,7 +39,7 @@ try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("book.t
 
 	}
 
-	public Book [] fileRead() {//이부분은 항상헷갈려
+	public Book [] fileRead() {//이부분은 항상헷갈려/여기는 클로즈 안해도 되니?/
 		
 		Book [] bArr = new Book[10];
 		int ind=0;
@@ -47,7 +47,8 @@ try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("book.t
 			while(true){
 				try {
 					Book b =(Book)ois.readObject();
-					bArr[ind++]=b;
+					bArr[ind]=b;
+					ind++;
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				}

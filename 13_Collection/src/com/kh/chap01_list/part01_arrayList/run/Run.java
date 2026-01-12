@@ -1,9 +1,12 @@
 package com.kh.chap01_list.part01_arrayList.run;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import com.kh.chap01_list.part01_arrayList.model.vo.mucisArtisitDescending;
 import com.kh.chap01_list.part01_arrayList.model.vo.music;
 
 public class Run {
@@ -67,10 +70,10 @@ public class Run {
 		ArrayList<music> list = new ArrayList<>(3);// 객체 생성시에는 제네릭 생략가능 
 		//>>크기 3칸짜리 배열 만든거임 [null,null,null]
 		System.out.println(list);//size기준 내용 출력
-		//1. add(E e) : 리스트의 끝(초기화된 위치)에 전달된 e를 추가시켜주느느 메서드 
+		//1. add(E e) : 리스트의 끝(초기화된 위치)에 전달된 e를 추가시켜주는 메서드 
 		list.add(new music("tears","소잔휘"));
 		list.add(new music("와", "이정현"));
-		list.add(new music("ㅇㅇ","ff"));
+		list.add(new music("60초","김성규"));
 		System.out.println(list);
 		
 		//add(int index E e)
@@ -158,19 +161,52 @@ public class Run {
 		
 		//list.clear();
 		//12. 리스트에 저장한 모든 값을 지워주는 메서드
-		list.clear();
+		//list.clear();
 		System.out.println("리스트가 비어있나요?"+list.isEmpty());
 		
 		
+		System.out.println("==============================");
 		
+		//13. Collections.sort(List list):  배열을 정렬해주는 메서드
+		List<String> list3= new ArrayList<String>();
+		list3.add("나태경");
+		list3.add("김태경");
+		list3.add("다태경");
+		list3.add("라태경");
 		
+		//정렬메서드 호출
+		Collections.sort(list3);//가나다라,1234 순으로 오름차순정렬
+		System.out.println(list3);
 		
+		//역순으로 정렬 4321,다나가..
+		Comparator<String> comp = Collections.reverseOrder();
+		Collections.sort(list3, comp);
 		
+		System.out.println(list3);
 		
+		/*
+		 * 내가 만든 클래스(vo) 정렬하기 위한 방버
+		 * 1. comparable 인터페이스 상속
+		 *  -VO클래스에 직접 상속시켜서 사용
+		 *  -해당 VO클래스의 "기본정렬조건"으로 사용된다.
+		 *  
+		 * 2. comparator 인터페이스 상속
+		 *  -기본 정렬조건 외에 추가 정렬조건을 만들고자 할때 사용
+		 *  -vo클래스 이외에 별도 클래스에 Comparator를 상속시켜 구현한다.
+		 *  -여려개의 정렬조건을 만들수 있다.
+		 *  
+		 */
+		System.out.println("====================");
+		Collections.sort(list);
+		System.out.println(list);
 		
+		Comparator<music>comp2 = new mucisArtisitDescending();
+		Collections.sort(list, comp2);
+		System.out.println(list);
 		
-		
-		
-		
+		//14. Colleacytion.shuffle()
+		// -내부의 데이터를 섞는 메서드
+		Collections.shuffle(list3);
+		System.out.println(list3);
 	}
 }
