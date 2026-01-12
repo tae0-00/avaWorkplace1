@@ -1,5 +1,7 @@
 package com.kh.practice.list.library.view;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.kh.practice.list.library.controller.BookController;
@@ -58,6 +60,11 @@ public class BookMenu {
 		
 		System.out.println("3. 장르 번호 입력 : (1.인문 / 2.자연과학 / 3.의료 / 4.기타) ");
 		int category = sc.nextInt(); 
+		//스위치문을 활용햐야함?
+		switch(category) {
+		case 1: 
+			category="인문";
+		}
 		
 		
 		System.out.println("4. 가격 입력");
@@ -68,15 +75,54 @@ public class BookMenu {
 		
 	}
 	public void selectList() {
+	List <Book> bookList= bc.selectList();//그냥 대입하는거임 
+	if(bookList.isEmpty()) {
+		System.out.println("존재하는 도서 없음");
+	}else {
+		for(Book b : bookList) {//이제 향상된 포문 사용하자
+			System.out.println(b);
+			sc.nextLine();
+		}
+	}
 		
 	}
 	public void searchBook() {
+		System.out.println("검색할 도서명 :");
+		String keyword = sc.nextLine(); 
 		
+		List <Book> searchList= bc.searchBook(keyword);
+		
+		if(searchList.isEmpty()) {
+			System.out.println("검색결과가 없다");
+		}else {
+			for(Book b : searchList) {
+				System.out.println(b);
+				sc.nextLine();
+			}
+		}
 	}
 	public void deleteBook() {
+		System.out.println("삭제할 도서명 :");
+		String title =sc.nextLine();
+		System.out.println("삭제할 저자명 :");
+		String author =sc.nextLine();
+		
+		Book br =bc.deleteBook(title, author);
+		
+		if(br!=null) {
+			System.out.println("성공적으로 삭제");
+			
+		}else {
+			System.out.println("삭제할 도서 찾지 못함");
+		}
 		
 	}
 	public void ascBook() {
-		
+		if(bc.ascBook()==1) {
+			System.out.println("정렬에 삭제 성공");
+			
+		}else {
+			System.out.println("정렬에 실패");
+		}
 	}
 }
