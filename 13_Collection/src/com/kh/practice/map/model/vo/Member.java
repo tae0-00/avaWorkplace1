@@ -1,6 +1,6 @@
 package com.kh.practice.map.model.vo;
 
-public class Member <K ,V> {
+public class Member  {
 	private String password;
 	private String name;
 	

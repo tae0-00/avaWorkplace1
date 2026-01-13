@@ -9,7 +9,7 @@ import com.kh.chap04_map.part01_hashmap.model.vo.Snack;
 import com.kh.practice.map.controller.MemberController;
 import com.kh.practice.map.model.vo.Member;
 
-public class MemberMenu <K , V>{
+public class MemberMenu {
 	private Scanner sc=new Scanner(System.in);
 	private MemberController mc = new MemberController();
 	
@@ -113,24 +113,42 @@ public class MemberMenu <K , V>{
 		System.out.println("변경할 비번 입력: ");
 		String changepwd= sc.next();
 		
-		boolean mc.changeName(id, changepwd);
-		if() {
-			
+		boolean m= mc.changePassword(id, password, changepwd)
+		if(m) {
+			System.out.println("변경 성공");
+		}else {
+			System.out.println("변경 실패");
 		}
 		
 		
 	}
 	public void changeName(){
+		System.out.println("아이디 입력: ");
+		String id= sc.next();
 		
+		System.out.println("비번 입력: ");
+		String password= sc.next();
+		
+		String ori = mc.logIn(id, password);
+		if(ori.isEmpty()) {
+			System.out.println("이름 변경에 실패함 다시 입력해줘");
+			return;
+		}else {
+			System.out.println(ori);
+		System.out.println("변경할 이름 :");
+		String newname=sc.next();
+		mc.changeName(id, newname);
+		System.out.println("이름 변경에 성공했습니다. ");
+		}
 	}
 	public void sameName(){
 		System.out.println(" 검색할 이름 입력: ");
 		String serchname= sc.next();
-		TreeMap<K, V> tt= mc.sameName(serchname);
-		//Set<Entry<String, Snack>>entrySet = hm.entrySet();
-		Set<Entry<K, V>>entrySet = tt.entrySet();
-		//for(Entry<String, Snack> en : entrySet){
-		for(Entry<K, V> en :entrySet ) {
+		TreeMap tt= mc.sameName(serchname);
+		
+		Set<Entry<String , Member>>entrySet = tt.entrySet();
+		
+		for(Entry<String , Member> en :entrySet ) {
 			System.out.println("en.getKey()"+en.getValue());
 		}
 	}
