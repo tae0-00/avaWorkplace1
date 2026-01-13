@@ -153,6 +153,6 @@ public class MusicView {
 		}
 	}
 	public void descSinger(){ 
-		int re= 
+		//int re= 
 	}
 }

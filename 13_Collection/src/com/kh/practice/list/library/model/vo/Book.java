@@ -1,5 +1,7 @@
 package com.kh.practice.list.library.model.vo;
 
+import java.util.Objects;
+
 public class Book implements Comparable<Book> {
 	private String title;
 	private String author;
@@ -58,9 +60,39 @@ public class Book implements Comparable<Book> {
 	@Override
 	public int compareTo(Book o) {
 
-		return this.title.compareTo(o.getTitle());
+		return this.title.compareTo(o.title);
 	}
-	
-	
+//	@Override
+//	public int hashCode() {
+//		final int prime =31;
+//		int re=1;
+//		re=prime * re+price;
+//		re=prime * re+ (title==null? 0 : title.hashCode());
+//		re = 
+//		
+//		
+//		return re;
+//	}@Override
+//	public boolean equals(Object obj) {
+//	 
+//	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(author, category, price, title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && Objects.equals(category, other.category) && price == other.price
+				&& Objects.equals(title, other.title);
+	}
 
 }

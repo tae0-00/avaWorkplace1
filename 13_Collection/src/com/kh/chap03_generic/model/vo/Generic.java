@@ -15,5 +15,26 @@ public class Generic < T , G>{
 	public T getT() {//그냥 내 맘대로 타입을 지정한 거임 나중에 자료형을 지정해주면 되ㅗ 안해줘도 object로 됨 
 		return t;
 	}
+
+
 	
+
+
+	public G getG() {
+		return g;
+	}
+
+
+	public void setG(G g) {
+		this.g = g;
+	}
+
+
+	public void setT(T t) {
+		this.t = t;
+	}
+	public static <V> void printTest(V item) {
+
+		System.out.println(item);
+	}
 }

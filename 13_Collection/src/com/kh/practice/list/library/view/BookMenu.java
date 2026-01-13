@@ -52,36 +52,49 @@ public class BookMenu {
 		}
 	}
 	public void insertBook() {
-		System.out.println("도서명 입력");
+		System.out.print("도서명 입력");
 		String title = sc.nextLine();
 		
-		System.out.println("저자명 입력");
+		System.out.print("저자명 입력");
 		String author = sc.nextLine();
 		
-		System.out.println("3. 장르 번호 입력 : (1.인문 / 2.자연과학 / 3.의료 / 4.기타) ");
+		System.out.print("3. 장르 번호 입력 : (1.인문 / 2.자연과학 / 3.의료 / 4.기타) ");
 		int category = sc.nextInt(); 
-		//스위치문을 활용햐야함?
-		switch(category) {
-		case 1: 
-			category="인문";
-		}
-		
-		
-		System.out.println("4. 가격 입력");
+//		//스위치문을 활용햐야함?
+//		switch(category) {
+//		case 1: 
+//			category=Integer.parseInt("인문");
+//			break;
+//		case 2 :
+//			category=Integer.parseInt("2자연과학");
+//			break;
+//		case 3: 
+//			category=Integer.parseInt("3.의료");
+//			break;
+//		case 4: 
+//			category= Integer.parseInt("4.기타");
+//			break;
+//		default : 
+//			System.out.println("잘못입력");
+//		}
+//		
+		System.out.print("4. 가격 입력");
 		int price = sc.nextInt();
-		
-		
-		Book b =bc.insertBook(new Book(title, author, category, price));
+		sc.nextLine();
+		String [] arr= {"인문","자연과학","의료","기타"};
+		Book b =new Book(title, author, arr[category-1], price);
+		bc.insertBook(b);
 		
 	}
 	public void selectList() {
 	List <Book> bookList= bc.selectList();//그냥 대입하는거임 
+	//ArratList<Book> bookList = bc.selectList(); 같은건가?
 	if(bookList.isEmpty()) {
 		System.out.println("존재하는 도서 없음");
 	}else {
 		for(Book b : bookList) {//이제 향상된 포문 사용하자
 			System.out.println(b);
-			sc.nextLine();
+			//sc.nextLine(); 왜 여기가 아니라 인트에 하지?
 		}
 	}
 		
@@ -97,7 +110,7 @@ public class BookMenu {
 		}else {
 			for(Book b : searchList) {
 				System.out.println(b);
-				sc.nextLine();
+			
 			}
 		}
 	}

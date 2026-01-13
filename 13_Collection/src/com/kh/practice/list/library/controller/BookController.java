@@ -28,7 +28,7 @@ public class BookController  {
 	}
 	public ArrayList  selectList() {
 		
-		bookList.hashCode();
+		 return (ArrayList)bookList;
 		//주소값을 반환한다는게 무슨소이여
 	}
 	public ArrayList  searchBook(String keyword) {
