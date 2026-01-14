@@ -42,22 +42,26 @@ public class MemberController  {
 		return false;
 	}
 	public void changeName(String id, String newName) {
+		//여기도 정석대로는 존재하는지 확인 해야함 
 		Member m =map.get(id);
 		m.setName(newName);
-		
 	}
-	public TreeMap<String ,Member>sameName(String name){
+	public TreeMap<String ,String>sameName(String name){
 		
-		TreeMap<String ,Member> sn =new TreeMap<String, Member>();
-		Member m = map.get(id);
-		Set<String ,Member> set=sn.keySet();
+		TreeMap<String, String> tree = new TreeMap<>();
+		
+		Set<String > keys=map.keySet();
+		for(String key : keys) {
+			String str=map.get(key).getName();
+			if(str.equals(name)) {
+				tree.put(key, name);
+			}
+		}
+		
+		
 		//if(map.get(name).equals(name)) 이건안되는대 아이디 어딧냐
 		
-		
-		
-		
-			
-		
+		return tree;
 	}
-
+	
 }

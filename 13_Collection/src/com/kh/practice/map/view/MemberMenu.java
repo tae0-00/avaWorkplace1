@@ -88,68 +88,79 @@ public class MemberMenu {
 		 }
 	}
 	public void logIn(){
-		System.out.println("아이디 입력: ");
-		String id= sc.next();
-		
-		System.out.println("비번 입력: ");
-		String password= sc.next();
-		
-		String log= mc.logIn(id, password);
-		if(log==null) {
-			System.out.println("틀린 아이디 또는 비번 입니다 다시입려하세요");
-			return;
-		}else {
-			System.out.println("ooo님, 환영합니다,");
-			memberMenu();
+		while(true) {
+			System.out.println("아이디 입력: ");
+			String id= sc.next();
+			
+			System.out.println("비번 입력: ");
+			String password= sc.next();
+			
+			String log= mc.logIn(id, password);
+			if(log==null) {
+				System.out.println("틀린 아이디 또는 비번 입니다 다시입려하세요");
+				return;
+			}else {
+				System.out.println(log+"님, 환영합니다,");
+				break;
+			}
 		}
+		
 	}
 	public void changePassword(){
-		System.out.println("아이디 입력: ");
-		String id= sc.next();
-		
-		System.out.println("비번 입력: ");
-		String password= sc.next();
-		
-		System.out.println("변경할 비번 입력: ");
-		String changepwd= sc.next();
-		
-		boolean m= mc.changePassword(id, password, changepwd)
-		if(m) {
-			System.out.println("변경 성공");
-		}else {
-			System.out.println("변경 실패");
+		while(true) {
+			System.out.println("아이디 입력: ");
+			String id= sc.next();
+			
+			System.out.println("비번 입력: ");
+			String password= sc.next();
+			
+			System.out.println("변경할 비번 입력: ");
+			String changepwd= sc.next();
+			
+			boolean m= mc.changePassword(id, password, changepwd);
+			if(m) {
+				System.out.println("변경 성공");
+				break;
+			}else {
+				System.out.println("변경 실패");
+			}
 		}
+		
 		
 		
 	}
 	public void changeName(){
-		System.out.println("아이디 입력: ");
-		String id= sc.next();
-		
-		System.out.println("비번 입력: ");
-		String password= sc.next();
-		
-		String ori = mc.logIn(id, password);
-		if(ori.isEmpty()) {
-			System.out.println("이름 변경에 실패함 다시 입력해줘");
-			return;
-		}else {
+		while(true) {
+			System.out.println("아이디 입력: ");
+			String id= sc.next();
+			
+			System.out.println("비번 입력: ");
+			String password= sc.next();
+			
+			String ori = mc.logIn(id, password);
+			if(ori==null) {
+				System.out.println("이름 변경에 실패함 다시 입력해줘");
+				return;
+			}else {
 			System.out.println(ori);
-		System.out.println("변경할 이름 :");
-		String newname=sc.next();
-		mc.changeName(id, newname);
-		System.out.println("이름 변경에 성공했습니다. ");
+			System.out.println("변경할 이름 :");
+			String newname=sc.next();
+			mc.changeName(id, newname);
+			System.out.println("이름 변경에 성공했습니다. ");
+			break;
+			}
 		}
+		
 	}
 	public void sameName(){
-		System.out.println(" 검색할 이름 입력: ");
+		System.out.print(" 검색할 이름 입력: ");
 		String serchname= sc.next();
-		TreeMap tt= mc.sameName(serchname);
+		TreeMap<String ,String> tt= mc.sameName(serchname);
 		
-		Set<Entry<String , Member>>entrySet = tt.entrySet();
+		Set<Entry<String ,String >>entrySet = tt.entrySet();
 		
-		for(Entry<String , Member> en :entrySet ) {
-			System.out.println("en.getKey()"+en.getValue());
+		for(Entry<String ,String > en :entrySet ) {
+			System.out.println(en.getValue()+"-"+en.getKey());
 		}
 	}
 	
