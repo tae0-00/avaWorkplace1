@@ -1,6 +1,6 @@
 package com.kh.practice.thread;
 
-public class Customer extends Data{
+public class Customer extends Thread{
 
 	private Data data;
 
@@ -10,7 +10,7 @@ public class Customer extends Data{
 	}
 
 	@Override
-	public void run () {
+	public void run (){
 		
 			for(int i=0; i<10; i++) {
 				try {

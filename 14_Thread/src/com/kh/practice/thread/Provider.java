@@ -1,6 +1,8 @@
 package com.kh.practice.thread;
 
-public class Provider extends Data{
+import java.util.Random;
+
+public class Provider extends Thread{
 
 	private Data data;
 
@@ -12,7 +14,10 @@ public class Provider extends Data{
 	@Override
 	public void run() {
 		for(int i=0; i<10; i++) {		
-			data.setValue(i);
+			int ran= new Random().nextInt(100)+1;
+			data.setValue(ran);
+			System.out.println("입력");
+			System.out.println("put V"+ran);
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {

@@ -7,21 +7,7 @@ public class Data{
 	public Data() {
 		
 	}
-	public void setValue(int value) {
-		synchronized (this) {
-			if(isEmpty==false) {
-				try {
-					wait();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			this.value = value;
-			isEmpty=false;
-			notify();
-		}
-	}
+	
 
 
 	public int getValue() throws EmptyException{
@@ -39,7 +25,22 @@ public class Data{
 			
 		}
 				
+	public void setValue(int value) {
+		synchronized (this) {
+			if(isEmpty==false) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 			
+			isEmpty=false;
+			this.value = value;
+			notify();
+		}
+	}		
 		
 		
 		
