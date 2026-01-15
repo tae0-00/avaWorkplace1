@@ -2,12 +2,12 @@ package com.kh.practice.generics.model.vo;
 
 import java.util.Objects;
 
-public class Nut {
+public class Nut extends Farm {
 
 	private String name;
 
 	public Nut(String kind, String name) {
-		super();
+		super(kind);
 		this.name = name;
 	}
 
