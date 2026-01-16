@@ -30,6 +30,7 @@ public class FarmMenu extends Farm {
 		
 	}
 	public void addNewKind() {
+		while(true) {
 		System.out.println(" 메뉴번호 입력");
 		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
 		System.out.println("추가할 종류 번호 :");
@@ -37,7 +38,7 @@ public class FarmMenu extends Farm {
 		
 		Farm re=null;
 		int acount =0;
-		switch(menu) {
+		switch(menu) {//d이름은 밖에서 받고 똑같이 name만해도 됨
 		case 1:
 			System.out.println("이름 :");
 			String name1 = sc.next();
@@ -73,7 +74,7 @@ public class FarmMenu extends Farm {
 		}else {
 			System.out.println("새농산물 추가함");
 		}
-	
+		}
 	}
 	public void removeKind() {
 		
@@ -82,10 +83,11 @@ public class FarmMenu extends Farm {
 		
 	}
 	public void printFarm() {
-		
+		//종류: 이름 자체를 투스링부분 오버라이딩을 교체?? 
 		HashMap<Farm, Integer> map =fc.printFarm();
+		//Set<Farm> set=map.keySet();
 		for(Farm s: map.keySet()) {
-			System.out.println(s.getKind());
+			System.out.println(s+"("+map.get(s));
 		}
 	}
 	public void buyFarm() {
@@ -95,6 +97,6 @@ public class FarmMenu extends Farm {
 		
 	}
 	public void printBuyFarm() {
-		
+		while(iter)
 	}
 }
