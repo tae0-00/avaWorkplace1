@@ -86,9 +86,13 @@ public class StreamPractice {
 	        // 이름: 나이
 	        //강감찬 : 16 김말똥 : 29 아무개 : 23 이순신 : 25 홍길동 : 15
 	   //   slist.stream().sorted(s->s.)
+	       
+	       
 	        // 7. slist에서 20살 이상인 학생의 평균점수를 구하는 프로그램
 	        // 80.0
-	       double re= slist.stream().filter((s->s.age>=20).
+	       //double re= slist.stream().filter((s->s.age>=20).
+	       
+	       
 //	      System.out.println(score);
 	        // 8. wordArr내부요소의 공백을 모두 제거한후 List<String>으로 변환하는 프로그램
 	        // 출력결과 : [abcd, 홍길동, helloworld]
